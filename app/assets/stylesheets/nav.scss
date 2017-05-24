@@ -1,0 +1,57 @@
+.navbar {
+  border-radius: 0;
+  background: red;
+}
+
+.navbar-brand img {
+  display: inline-block;
+}
+
+.navbar-text.navbar-logo {
+  font-family: "Tex Gyre Adventor";
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+  padding-top: .3rem;
+}
+
+// (41,43,44)
+.transparent-nav.bg-inverse {
+  background-color: rgba(41,43,44, 0.5) !important;
+}
+
+.navbar-inverse .navbar-nav .nav-link,
+.navbar-inverse .navbar-nav .nav-link:focus,
+.navbar-inverse .navbar-nav .nav-link:hover {
+  color: #FFF;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+  text-shadow: none;
+}
+
+.transparent-nav.bg-inverse.shrink {
+  // background-color: rgba(41,43,44, 0.8) !important;
+  background-color: #FFF !important;
+  .navbar-text.navbar-logo {
+    color: #333;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-link:focus,
+  .navbar-nav .nav-link:hover {
+    color: #333;
+  }
+
+  border-bottom: 1px solid #ddd;
+}
+
+.transparent-nav.bg-inverse.secondary-page {
+  background-color: rgba(41,43,44, 0.5) !important;
+}
+
+.nav-logo {
+  display: inline;
+  height: 25px;
+}

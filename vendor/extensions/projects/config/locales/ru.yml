@@ -1,0 +1,35 @@
+ru:
+  refinery:
+    plugins:
+      projects:
+        title: Projects
+    projects:
+      admin:
+        projects:
+          actions:
+            create_new: Добавить Project
+            reorder: Изменить порядок Projects
+            reorder_done: Закончить изменять порядок Projects
+          records:
+            title: Projects
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Projects" не найдено. Нажмите "Добавить Project" чтобы создать project.
+          project:
+            view_live_html: Просмотреть project вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать project
+            delete: Удалить project навсегда
+      projects:
+        show:
+          other: Другие Projects
+  activerecord:
+    attributes:
+      'refinery/projects/project':
+        name: Name
+        description: Description
+        picture: Picture
+        team_name: Team Name
+        location: Location
+        area: Area
+        completion_date: Completion Date
+        featured: Featured
+        category_id: Category

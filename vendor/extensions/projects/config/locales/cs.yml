@@ -1,0 +1,35 @@
+cs:
+  refinery:
+    plugins:
+      projects:
+        title: Projects
+    projects:
+      admin:
+        projects:
+          actions:
+            create_new: Přidat Project
+            reorder: Řadit Projects
+            reorder_done: Konec řazení Projects
+          records:
+            title: Projects
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Projects. Zvolte "Přidat Project" pro přidání prvního project.
+          project:
+            view_live_html: Zobrazit náhled project<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit project
+            delete: Smazat project
+      projects:
+        show:
+          other: Další Projects
+  activerecord:
+    attributes:
+      'refinery/projects/project':
+        name: Name
+        description: Description
+        picture: Picture
+        team_name: Team Name
+        location: Location
+        area: Area
+        completion_date: Completion Date
+        featured: Featured
+        category_id: Category

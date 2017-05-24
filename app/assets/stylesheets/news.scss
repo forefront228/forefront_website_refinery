@@ -1,0 +1,148 @@
+@import 'variables';
+
+#news {
+  margin-top: -1 * $content-margin-top;
+}
+
+.news-panel {
+  background-color: #FFFFFF;
+  height: 100px;
+  margin: 5px;
+}
+
+span.see-more {
+  color: #78A22F;
+}
+
+// .services-list li.news-item:last-of-type {
+//   border-bottom: none;
+// }
+
+.services-list li.news-item p {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.services-list li.expanded p {
+  max-height: 1000px;
+  overflow: auto;
+}
+
+.services-list li:hover.news-item.expanded {
+  background-color: transparent;
+  color: #888;
+}
+
+.services-list li:hover.news-item.expanded h4 {
+  color: black;
+}
+
+.news-item:hover {
+  cursor: pointer;
+}
+
+.news-item.expanded:hover {
+  cursor: default;
+}
+
+li.news-item .full-img {
+  opacity: 0;
+  max-height: 0;
+}
+
+li.news-item.expanded .full-img {
+  opacity: 100;
+  max-height: 300px;
+}
+
+li.news-item .spacer {
+  display: none;
+}
+
+li.news-item.expanded .spacer {
+  display: block;
+}
+
+
+li.news-item .thumb img {
+  width: 100%;
+}
+
+li.news-item.expanded .thumb {
+  width: 0;
+  opacity: 0;
+}
+
+li.news-item h4 {
+  font-size: 1.5rem;
+}
+
+li.news-item.expanded h4 {
+  font-size: 3rem;
+}
+
+.see-more-container,
+.expanded .see-less-container {
+  display: block;
+}
+
+.see-less-container,
+.expanded .see-more-container {
+  display: none;
+}
+
+
+li.news-item .full-img-container {
+  text-align: right;
+  height: 0;
+}
+
+li.news-item.expanded .full-img-container {
+  text-align: right;
+  height: auto;
+}
+
+.services-list div.thumb {
+  float: left;
+  margin-right: 20px;
+  width: 75px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 35px;
+}
+
+.full-img {
+  -webkit-transition: .7s opacity;
+          transition: .7s opacity;
+}
+
+h5 {
+  -webkit-transition: .7s all;
+          transition: .7s all;
+}
+
+li.news-item {
+  -webkit-transition: 0s color;
+          transition: 0s color;
+}
+
+p {
+  -webkit-transition: .7s max-height;
+          transition: .7s max-height;
+}
+
+
+@media (min-width: 768px){
+  body .services-list li.news-item {
+      border: 2px solid #DDD;
+      border-radius: 2px;
+      margin-bottom: 2em;
+    // border-right: none;
+    // border-left: none;
+  }
+
+  .services-list div.thumb {
+    width: 200px;
+    opacity: 100;
+  }
+}

@@ -1,0 +1,636 @@
+<div id="preloader">
+<div id="preloader-inner"></div>
+</div>
+<!--/preloader -->
+<!-- slider start-->
+
+<section id="home" class="overflow-hidden slider-banner">
+  <div class="main-slider">
+    <ul class="slides">
+      <%= render partial: "refinery/projects/projects/project-feature", collection: @projects, as: :project%>
+    </ul><!--slides end-->
+  </div><!--slider end-->
+</section>
+
+<!-- news section -->
+<div class="space-100"></div>
+<section id="news">
+  <div class="space-100"></div>
+  <div class="container">
+    <h2 class="center-title scrollReveal sr-bottom">News</h2>
+    <div class="center-border"></div>
+    <div class="space-40"></div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <ul class="row list-unstyled services-list">
+          <%#= render partial: "news/stub", collection: @articles, as: :article%>
+        </ul><!--service list end-->
+        <div class="col-md-12 text-center">
+          <a href="/news" class="btn btn-lg btn-skin-border btn-block margin-b-20">See More News</a>
+        </div>
+      </div>
+    </div><!--row end-->
+  </div>
+</section>
+
+<!-- news section end -->
+
+<section id="organization">
+  <div class="space-100"></div>
+  <div class="container">
+    <h2 class="center-title scrollReveal sr-bottom">Organization</h2>
+    <div class="center-border"></div>
+    <div class="space-40"></div>
+    <div>
+      <!-- Nav tabs -->
+      <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
+        <li role="presentation" class="nav-item"><a class="nav-link active" href="#business" aria-controls="about-agency" role="tab" data-toggle="tab">Business</a></li>
+        <li role="presentation" class=" nav-item"><a class="nav-link" href="#culture" aria-controls="skills" role="tab" data-toggle="tab">Culture</a></li>
+        <li role="presentation" class=" nav-item"><a class="nav-link" href="#humanitarian" aria-controls="process" role="tab" data-toggle="tab">Humanitarian</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="business">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+              <p class="lead">
+                FSE has a business philosophy that pursues technical excellence in structural engineering by developing and working with teams of people who recognize that the best projects are those that are refined through an organic process where each member listens and responds to the needs of the Client as well as the end user. At the end of the day, we sleep well knowing that we have contributed to the teams we join, and helped other people as well as ourselves grow professionally and personally.
+              </p>
+              <p class="lead">
+                Our goal is to do business well by teaming with a network of diverse clients who want to deliver the best solutions for each situation. It is through our work and personal team-mate relationships that we find opportunities to serve others. It is in our service that our business flourishes. As our business flourishes, we are enabled to help others grow in various ways.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="culture">
+          <div class="col-md-8 offset-md-2 text-center">
+            <p class="lead">
+              “Forefront” refers to several intrinsic qualities of our firm. Our goal is to be at the forefront of our profession by setting the modern standard of structural engineering excellence. We accomplish this with new techniques and solutions guided by the context of history and experience. Our name also reflects our corporate and personal commitment to reach the world through our profession. Our work, our people, and our vision extend globally.
+            </p>
+            <p class="lead">
+              Every project begins with an idea, and every idea begins with a person. The summation of talented people and servant-leadership is the source of great collaboration. Our work is not about individuals, but rather teams comprised of unique individuals seeking one goal—developing the right solution for each problem. These solutions apply to our work, our lives, and the lives of those that we interact with.
+            </p>
+          </div>
+        </div><!--tab panel end-->
+        <div role="tabpanel" class="tab-pane" id="humanitarian">
+          <div class="col-md-8 offset-md-2 text-center">
+            <p class="lead">
+              At FSE we believe God has given us both the responsibility and joy of being mercy minded.   We think that our job as structural engineers is to be the best we possibly can, and to conduct business at the highest level as we work with people groups throughout the cities of our world.  The city is the heart of a state or province or country.  It is also the center of modern invention, construction, and innovation.  But it is the hearts of people that reflect their true needs.
+            </p>
+            <p class="lead quote">
+              “Everyone to whom much was given, of [them] much will be required.” (Luke 12:48 ESV).
+            </p>
+            <p class="lead quote">
+              “The eye cannot say to the hand, ‘I have no need of you,’ nor again the head to the feet, ‘I have no need of you.’  On the contrary, the parts of the body that seem to be weaker are indispensable, and on those parts of the body that we think less honorable we bestow the greater honor. . .If one member suffers, all suffer together, if one member is honored, all rejoice together.”  (1 Cor. 14:6 ESV)
+            </p>
+            <p class="lead">
+              25% of all FSE profits are invested in and contribute toward the development of sustainable, indigenous work in the cities of our world.  Not merely a donation that is eventually depleted, but intentional sustainability that helps provide job creation, shelter, and holistic growth.
+            </p>
+          </div>
+        </div><!--tab panel end-->
+      </div><!--tab content end-->
+    </div>
+  </div><!--container end-->
+  <div class="space-80"></div>
+</section>
+<!--end about section-->
+
+
+<!-- Parallax -->
+<!-- <div class="dzsparallaxer auto-init" data-options='{   direction: "reverse"}' style="height: 350px;">
+
+<div class="divimage dzsparallaxer--target " style="width: 101%; height: 600px; background-image: url(<%= asset_path 'bg-2.jpg' %>)">
+</div>
+<div class=" parallax-text text-center center-it">
+<h2>" A Super Simple Minimal One Page for Creative & Small Agencies "</h2>
+</div>
+</div> -->
+<!-- End Parallax -->
+
+<!--our team start-->
+<!-- <div class="team-wrapper">
+<div class="space-100"></div>
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-lg-3 margin-b-30">
+<div class="person-col scrollReveal sr-bottom sr-ease-in-out-quad sr-delay-1">
+<img src="<%= asset_path 'team1.png' %>" alt="" class="img-fluid">
+<div class="person-overlay">
+<div class="person-inner">
+<h4 class="text-uppercase">Carlos Smith</h4>
+<span>Project Manager</span>
+<ul class="list-inline">
+<li class="list-inline-item"><a href="#"><i class="ion-social-facebook"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-twitter"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-instagram"></i></a></li>
+</ul>
+</div>
+</div> --> <!--person overlay end-->
+<!-- </div> --> <!--person col end-->
+<!-- </div> --> <!--col-->
+<!-- <div class="col-md-6 col-lg-3 margin-b-30">
+<div class="person-col person-col scrollReveal sr-bottom sr-ease-in-out-quad sr-delay-2">
+<img src="<%= asset_path 'team2.png' %>" alt="" class="img-fluid">
+<div class="person-overlay">
+<div class="person-inner">
+<h4 class="text-uppercase">Emily Doe</h4>
+<span>Cms-Developer</span>
+<ul class="list-inline">
+<li class="list-inline-item"><a href="#"><i class="ion-social-facebook"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-twitter"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-instagram"></i></a></li>
+</ul>
+</div>
+</div> --><!--person overlay end-->
+<!-- </div> --> <!--person col end-->
+<!-- </div> --> <!--person col end-->
+<!-- <div class="col-md-6 col-lg-3 margin-b-30">
+<div class="person-col person-col scrollReveal sr-bottom sr-ease-in-out-quad sr-delay-3">
+<img src="<%= asset_path 'team3.png' %>" alt="" class="img-fluid">
+<div class="person-overlay">
+<div class="person-inner">
+<h4 class="text-uppercase">Emily Doe</h4>
+<span>Co-founder</span>
+<ul class="list-inline">
+<li class="list-inline-item"><a href="#"><i class="ion-social-facebook"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-twitter"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-instagram"></i></a></li>
+</ul>
+</div>
+</div> --> <!--person overlay end-->
+<!-- </div> --> <!--person col end-->
+<!-- </div>--> <!--col-->
+<!-- <div class="col-md-6 col-lg-3 margin-b-30">
+<div class="person-col person-col scrollReveal sr-bottom sr-ease-in-out-quad sr-delay-4">
+<img src="<%= asset_path 'team4.png' %>" alt="" class="img-fluid">
+<div class="person-overlay">
+<div class="person-inner">
+<h4 class="text-uppercase">John Doe</h4>
+<span>UI / UX Designer</span>
+<ul class="list-inline">
+<li class="list-inline-item"><a href="#"><i class="ion-social-facebook"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-twitter"></i></a></li>
+<li class="list-inline-item"><a href="#"><i class="ion-social-instagram"></i></a></li>
+</ul>
+</div>
+</div> --> <!--person overlay end-->
+<!-- </div> --> <!--person col end-->
+<!-- </div> --> <!--col-->
+<!-- </div> --> <!--row-->
+<!-- </div>
+<div class="space-70"></div>
+</div> -->
+<!--our team end-->
+
+<!--video tour-->
+<!-- <div class="dzsparallaxer auto-init" data-options='{   direction: "reverse"}' style="height: 350px;">
+
+<div class="divimage dzsparallaxer--target " style="width: 101%; height: 600px; background-image: url(<%= asset_path 'bg-2.jpg' %>)">
+</div>
+<div class=" parallax-text text-center center-it">
+<h2>Take a video tour</h2>
+<a href="#" class="video-link" data-toggle="modal" data-target="#video-popup"><i class="ion-ios-play-outline"></i></a>
+</div>
+</div> -->
+<!--end vide tour-->
+
+<!--start services-->
+<!-- <section id="services">
+<div class="space-100"></div>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 margin-b-50">
+<h2 class="center-title">What we do</h2>
+<div class="center-border"></div>
+</div>
+</div> -->
+<!--row end-->
+<!-- <div class="row">
+
+<div class="col-md-8 offset-md-2">
+<ul class="row list-unstyled services-list">
+<li class="col-md-6 clearfix scrollReveal sr-bottom">
+<i class="ion-ios-briefcase-outline"></i>
+<div class="content">
+<h4>Marketing</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- <li class="col-md-6 clearfix  scrollReveal sr-bottom sr-delay-1">
+<i class="ion-images"></i>
+<div class="content">
+<h4>Web Design</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- <li class="col-md-6 clearfix scrollReveal sr-bottom sr-delay-2">
+<i class="ion-bag"></i>
+<div class="content">
+<h4>E-commerce</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- <li class="col-md-6 clearfix scrollReveal sr-bottom sr-delay-3">
+<i class="ion-hammer"></i>
+<div class="content">
+<h4>Web Development</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- <li class="col-md-6 clearfix scrollReveal sr-bottom sr-delay-4">
+<i class="ion-ios-people-outline"></i>
+<div class="content">
+<h4>Free Support</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- <li class="col-md-6 clearfix scrollReveal sr-bottom sr-delay-5">
+<i class="ion-iphone"></i>
+<div class="content">
+<h4>App Development</h4>
+<p>
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+</p>
+</div>
+</li> -->
+<!--service col end with li-->
+<!-- </ul> -->
+<!--service list end-->
+<!-- </div> -->
+<!-- </div> -->
+<!--row end-->
+<!-- <hr>
+<div class="space-60"></div>
+<div class="text-center scrollReveal sr-bottom">
+<h1 class="margin-b-20">Want to work with us</h1>
+<a href="#" class="btn btn-dark-border btn-lg">Our Portfolio</a>
+</div>
+</div>
+</section> -->
+<!--end services-->
+
+<!-- <div class="space-70"></div> -->
+
+<!-- Parallax -->
+<!-- <div class="dzsparallaxer auto-init" data-options='{   direction: "reverse"}' style="height: 350px;">
+
+<div class="divimage dzsparallaxer--target " style="width: 101%; height: 600px; background-image: url(<%= asset_path 'bg-3.jpg' %>)">
+</div>
+<div class=" parallax-text text-center center-it">
+<div class="testi-slider">
+<ul class="slides">
+<li>
+<i class="ion-quote"></i>
+<p>
+" Great work done. Very clean design and super easy code help me to launch my site quickly. "
+</p>
+<h5>John Doe</h5>
+</li> -->
+<!--li-->
+<!-- <li>
+<i class="ion-quote"></i>
+<p>
+" A super clean full pack one page theme. great work. "
+</p>
+<h5>Emily</h5>
+</li> -->
+<!--li-->
+<!-- <li>
+<i class="ion-quote"></i>
+<p>
+" It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+</p>
+<h5>Alex</h5>
+</li> -->
+<!--li-->
+<!-- </ul>
+</div> -->
+<!-- </div> -->
+<!--parallax text-->
+<!-- </div> -->
+<!-- End Parallax -->
+
+
+<!--pricing start-->
+<!-- <section class="pricing-wrapper">
+<div class="container">
+<div class="row flex-box">
+<div class="col-md-4 d-flex align-middle margin-b-30">
+<div class="price-box scrollReveal sr-scaleDown sr-ease-in-out-back">
+<h3>Starter</h3>
+<h1><sup>$</sup> 6</h1>
+<ul class="list-unstyled">
+<li>6 Months Support</li>
+<li>2 Demos</li>
+<li>Mailchimp Form</li>
+<li>Php Contact Form</li>
+<li>1 Domain</li>
+</ul>
+<div class="price-footer">
+<a href="#" class="btn btn-lg btn-dark-border">Buy Now</a>
+</div>
+</div> -->
+<!--price box-->
+<!-- </div> -->
+<!--price col-->
+<!-- <div class="col-md-4 d-flex  align-middle margin-b-30">
+<div class="price-box  scrollReveal sr-scaleDown sr-ease-in-out-back sr-delay-1">
+<h3>Business</h3>
+<span class="best-label">Best Value</span>
+<h1><sup>$</sup> 21</h1>
+<ul class="list-unstyled">
+<li>12 Months Support</li>
+<li>10 Demos</li>
+<li>Mailchimp Form</li>
+<li>Php Contact Form</li>
+<li>5 Domain</li>
+</ul>
+<div class="price-footer">
+<a href="#" class="btn btn-lg btn-dark-border">Buy Now</a>
+</div>
+</div> -->
+<!--price box-->
+<!-- </div> -->
+<!--price col-->
+<!-- <div class="col-md-4 d-flex  align-middle margin-b-30">
+<div class="price-box scrollReveal sr-scaleDown sr-ease-in-out-back sr-delay-2">
+<h3>Advanced</h3>
+<h1><sup>$</sup> 49</h1>
+<ul class="list-unstyled">
+<li>Unlimited Support</li>
+<li>20 Demos</li>
+<li>Mailchimp Form</li>
+<li>Php Contact Form</li>
+<li>Unlimited Domain</li>
+</ul>
+<div class="price-footer">
+<a href="#" class="btn btn-lg btn-dark-border">Buy Now</a>
+</div>
+</div> -->
+<!--price box-->
+<!-- </div> -->
+<!--price col-->
+<!-- </div>
+
+<div class="row scrollReveal sr-bottom sr-delay-2">
+<div class="col-md-8 offset-md-2 text-center">
+<p class="margin-b-30">Get the latest offer from us <a data-toggle="collapse"  href="#newsletter" aria-expanded="false" aria-controls="newsletter">Subscribe</a></p>
+<div class="collapse" id="newsletter">
+<div class="newsletter-form">
+<form role="form" method="post" action="#" class="subscribe-form  xone-newsletter">
+<div class="form-group">
+<input type="text" class="form-control" name="email" placeholder="Enter email to subscribe">
+</div>
+<div>
+<button class="btn btn-skin-border btn-lg" name="submit" type="submit">Notify me</button>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+</div> -->
+<!--row-->
+<!-- </div> -->
+<!--container-->
+<!-- </section> -->
+<!--pricing end-->
+
+<!-- <div class="space-50"></div> -->
+
+<!--portfolio start-->
+<!-- <section id="work">
+<div class="work-header">
+<div class="container">
+<h2 class="center-title person-col">Portfolio</h2>
+<div class="center-border"></div>
+<p class="text-center margin-b-20">Present your work in beautiful way </p>
+</div>
+</div> -->
+<!--work header-->
+<!--filter start-->
+<!-- <div class="container">
+<div id="js-filters-awesome-work" class="cbp-l-filters-work">
+<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+SHOW ALL
+</div>
+<div data-filter=".identity" class="cbp-filter-item">
+IDENTITY <div class="cbp-filter-counter"></div>
+</div>
+<div data-filter=".web-design" class="cbp-filter-item">
+WEB DESIGN <div class="cbp-filter-counter"></div>
+</div>
+<div data-filter=".graphic" class="cbp-filter-item">
+GRAPHIC <div class="cbp-filter-counter"></div>
+</div>
+<div data-filter=".logos" class="cbp-filter-item">
+LOGO <div class="cbp-filter-counter"></div>
+</div>
+</div> -->
+<!--filter nav end-->
+
+<!-- <div id="js-grid-awesome-work" class="cbp cbp-l-grid-work">
+<div class="cbp-item identity">
+<a href="assets/ajax-awesome-work/project1.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w1.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project1.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Web Design / Graphic</div>
+</div> -->
+<!--work item-->
+<!-- <div class="cbp-item web-design logos">
+<a href="assets/ajax-awesome-work/project2.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w2.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project2.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Logo / Web Design</div>
+</div> -->
+<!--work item-->
+<!-- <div class="cbp-item graphic logos">
+<a href="assets/ajax-awesome-work/project3.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w3.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project3.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Graphic / Logo</div>
+</div> -->
+<!--work item-->
+<!-- <div class="cbp-item web-design graphic">
+<a href="assets/ajax-awesome-work/project4.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w4.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project4.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Web Design / Graphic</div>
+</div> -->
+<!--work item-->
+<!-- <div class="cbp-item identity web-design">
+<a href="assets/ajax-awesome-work/project5.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w5.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project5.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Web Design / Identity</div>
+</div> -->
+<!--work item-->
+<!-- <div class="cbp-item identity web-design">
+<a href="assets/ajax-awesome-work/project6.html" class="cbp-caption cbp-singlePage" rel="nofollow">
+<div class="cbp-caption-defaultWrap">
+<img src="<%= asset_path 'w6.jpg' %>" alt="">
+</div>
+<div class="cbp-caption-activeWrap"></div>
+</a>
+<a href="assets/ajax-awesome-work/project6.html" class="cbp-l-grid-work-title cbp-singlePage" rel="nofollow">Project Title</a>
+<div class="cbp-l-grid-work-desc">Identity / Web Design</div>
+</div> -->
+<!--work item-->
+<!-- </div> -->
+<!--grid end-->
+
+<!-- <div id="js-loadMore-awesome-work" class="cbp-l-loadMore-button">
+<a href="assets/ajax-awesome-work/loadMore.html" class="cbp-l-loadMore-link" rel="nofollow">
+<span class="cbp-l-loadMore-defaultText">LOAD MORE</span>
+<span class="cbp-l-loadMore-loadingText">LOADING...</span>
+<span class="cbp-l-loadMore-noMoreLoading">NO MORE WORKS</span>
+</a>
+</div> -->
+<!--work load more-->
+<!-- </div> -->
+<!--container end-->
+<!-- </section> -->
+<!--portfolio end-->
+<!-- <div class="space-100"></div> -->
+<!--partners-->
+<!-- <section class="partners">
+<div class="container">
+<div class="row">
+<div class="col-lg-2 col-md-4 col-xs-6 scrollReveal sr-bottom">
+<a href="#">
+<img src="<%= asset_path 'cl-1.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- <div class="col-lg-2 col-md-4 col-xs-6  scrollReveal sr-bottom sr-delay-1">
+<a href="#">
+<img src="<%= asset_path 'cl-2.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- <div class="col-lg-2 col-md-4 col-xs-6  scrollReveal sr-bottom sr-delay-2">
+<a href="#">
+<img src="<%= asset_path 'cl-3.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- <div class="col-lg-2 col-md-4 col-xs-6  scrollReveal sr-bottom sr-delay-3">
+<a href="#">
+<img src="<%= asset_path 'cl-4.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- <div class="col-lg-2 col-md-4 col-xs-6  scrollReveal sr-bottom sr-delay-4">
+<a href="#">
+<img src="<%= asset_path 'cl-1.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- <div class="col-lg-2 col-md-4 col-xs-6  scrollReveal sr-bottom sr-delay-5">
+<a href="#">
+<img src="<%= asset_path 'cl-2.png' %>" alt="" class="img-fluid">
+</a>
+</div> -->
+<!--partner col-->
+<!-- </div>
+</div>
+</section> -->
+<!--end partners-->
+
+<!--contact start-->
+<section id="contact" class="contact-section">
+  <div class="space-100"></div>
+  <div class="container">
+    <div class="row margin-b-50">
+      <div class="col-sm-12 scrollReveal sr-bottom">
+        <h2 class="center-title">Contact</h2>
+        <div class="center-border"></div>
+      </div>
+    </div><!--row-->
+    <div class="row">
+      <div class="col-md-5 offset-md-1 scrollReveal sr-left">
+        <div class="contact-details">
+          <p class="lead">Forefront Structural Engineers, <br> 228 S Wabash Ave #300, <br> Chicago, IL 60604 <br> (312) 376-1140</p>
+          <p class="lead">info@forefrontstructural.com</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://www.linkedin.com/company-beta/3277007/" target="_blank"><i class="ion-social-linkedin-outline"></i></a></li>
+          </ul>
+        </div><!--contact detail-->
+
+      </div><!--form col end-->
+      <div class="col-md-5 offset-md-1 scrollReveal sr-right sr-delay-1">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.659735433162!2d-87.6285748849054!3d41.87866677335837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca3085e35a3%3A0xff354344f728f4fc!2sForefront+Structural+Engineer+Inc!5e0!3m2!1sen!2sus!4v1493580701752" frameborder="0" style="width: 100%; height: 400px;"></iframe>
+
+      </div><!--contact detail col end-->
+    </div>
+  </div>
+</section>
+<!--contact end-->
+
+<!--modal of video-->
+<!-- <div class="modal video-modal fade" id="video-popup" tabindex="-1" role="dialog" aria-labelledby="video-popup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-close"></span></button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe id="vimeo-video" src="http://player.vimeo.com/video/57175742"></iframe>
+        </div>
+      </div> -->
+      <!--modal body-->
+    <!-- </div> -->
+    <!--modal content-->
+  <!-- </div> -->
+  <!--modal dialog-->
+<!-- </div> -->
+<!--end the modal of video-->
+
+<script>
+  $('.news-item').click(function(e){
+    $(this).addClass('expanded');
+  })
+
+  $('.see-less').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).parents('.news-item').removeClass('expanded');
+  })
+</script>
