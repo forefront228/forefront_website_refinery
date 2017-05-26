@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524222745) do
+ActiveRecord::Schema.define(version: 20170526233725) do
 
   create_table "refinery_authentication_devise_roles", force: :cascade do |t|
     t.string "title"
@@ -169,16 +169,16 @@ ActiveRecord::Schema.define(version: 20170524222745) do
   create_table "refinery_projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "picture_id"
     t.string   "team_name"
     t.string   "location"
     t.integer  "area"
     t.date     "completion_date"
-    t.boolean  "featured",        default: false
+    t.boolean  "featured",          default: false
     t.integer  "category_id"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "featured_image_id"
   end
 
   create_table "refinery_resource_translations", force: :cascade do |t|

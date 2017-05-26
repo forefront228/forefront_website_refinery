@@ -7,6 +7,7 @@ module Refinery
       validates :name, :presence => true, :uniqueness => true
 
       has_many_page_images
+      belongs_to :featured_image, class_name: ::Refinery::Image
 
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
