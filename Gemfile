@@ -47,7 +47,7 @@ group :development do
   gem 'spring'
 
   gem 'hirb'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'table_print'
   gem 'awesome_print'
 end

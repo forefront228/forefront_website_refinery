@@ -18,7 +18,10 @@
   <section>
     <h1>Picture</h1>
     <p>
-      <%= image_fu @project.picture, nil %>
+      <%= image_fu @project.images.first, nil %>
+    </p>
+    <p>
+      <%= image_fu @project.images.last, nil %>
     </p>
   </section>
   <section>
