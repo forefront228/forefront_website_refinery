@@ -51,7 +51,8 @@
 
   <div class='field'>
     <%= f.label :category_id -%>
-    <%= f.number_field :category_id -%>
+    <%#= f.number_field :category_id -%>
+    <%= f.select :category_id, Category.pluck(:name) %> <%# This sends the name of the category in the params. Need to figure out how to change controller method to find category id to update the field  %>
   </div>
 
 
