@@ -12,7 +12,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def permitted_project_params
-          [:name, :description, :picture_id, :team_name, :location, :area, :completion_date, :featured, :category_id, :featured_image]
+          [:name, :description, :picture_id, :team_name, :location, :area, :completion_date, :featured, :category_id, :featured_image_id]
         end
 
 
