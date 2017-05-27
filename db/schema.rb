@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522175344) do
+ActiveRecord::Schema.define(version: 20170527002724) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "refinery_authentication_devise_roles", force: :cascade do |t|
     t.string "title"
@@ -54,6 +60,28 @@ ActiveRecord::Schema.define(version: 20170522175344) do
 
   add_index "refinery_authentication_devise_users", ["id"], name: "index_refinery_authentication_devise_users_on_id"
   add_index "refinery_authentication_devise_users", ["slug"], name: "index_refinery_authentication_devise_users_on_slug"
+
+  create_table "refinery_image_page_translations", force: :cascade do |t|
+    t.integer  "refinery_image_page_id", null: false
+    t.string   "locale",                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.text     "caption"
+  end
+
+  add_index "refinery_image_page_translations", ["locale"], name: "index_refinery_image_page_translations_on_locale"
+  add_index "refinery_image_page_translations", ["refinery_image_page_id"], name: "index_186c9a170a0ab319c675aa80880ce155d8f47244"
+
+  create_table "refinery_image_pages", force: :cascade do |t|
+    t.integer "image_id"
+    t.integer "page_id"
+    t.integer "position"
+    t.text    "caption"
+    t.string  "page_type", default: "page"
+  end
+
+  add_index "refinery_image_pages", ["image_id"], name: "index_refinery_image_pages_on_image_id"
+  add_index "refinery_image_pages", ["page_id"], name: "index_refinery_image_pages_on_page_id"
 
   create_table "refinery_image_translations", force: :cascade do |t|
     t.integer  "refinery_image_id", null: false
@@ -147,16 +175,16 @@ ActiveRecord::Schema.define(version: 20170522175344) do
   create_table "refinery_projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "picture_id"
     t.string   "team_name"
     t.string   "location"
     t.integer  "area"
     t.date     "completion_date"
-    t.boolean  "featured",        default: false
+    t.boolean  "featured",          default: false
     t.integer  "category_id"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "featured_image_id"
   end
 
   create_table "refinery_resource_translations", force: :cascade do |t|

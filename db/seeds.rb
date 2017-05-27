@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+%w(Residential Institutional Mixed-Use Hospitality Commercial).each do |c|
+  Category.create(name:c)
+end
 # Added by Refinery CMS Pages extension
 Refinery::Pages::Engine.load_seed
 

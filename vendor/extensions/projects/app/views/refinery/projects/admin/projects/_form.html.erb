@@ -16,11 +16,11 @@
   </div>
 
   <div class='field'>
-    <%= f.label :picture -%>
+    <%= f.label :featured_image -%>
     <%= render '/refinery/admin/image_picker',
                :f => f,
-               :field => :picture_id,
-               :image => @project.picture,
+               :field => :featured_image_id,
+               :image => @project.featured_image,
                :toggle_image_display => false -%>
   </div>
 
@@ -51,8 +51,39 @@
 
   <div class='field'>
     <%= f.label :category_id -%>
-    <%= f.number_field :category_id -%>
+    <%#= f.number_field :category_id -%>
+    <%= f.select :category_id, Category.pluck(:name) %> <%# This sends the name of the category in the params. Need to figure out how to change controller method to find category id to update the field  %>
   </div>
+
+
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <li class='ui-state-default ui-state-active'>
+          <%#= link_to 'Blurb', "#page_part_blurb" %>
+        </li>
+        <% Refinery::Projects.tabs.each_with_index do |tab, tab_index| %>
+          <li class='ui-state-default' id="custom_<%= tab.name %>_tab">
+            <%= link_to tab.name.titleize, "#custom_tab_#{tab_index}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% part_index = -1 %>
+          <%#= render 'form_part', :f => f, :part_index => (part_index += 1) -%>
+        <% Refinery::Projects.tabs.each_with_index do |tab, tab_index| %>
+          <div class='page_part' id='<%= "custom_tab_#{tab_index}" %>'>
+            <%= render tab.partial, :f => f %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

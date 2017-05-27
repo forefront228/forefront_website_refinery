@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/refinery/refinerycms-page-images.git
+  revision: 5f50b6d37bd31ddc74ae2d574ab2abfe17b9e650
+  branch: master
+  specs:
+    refinerycms-page-images (3.0.0)
+      decorators (~> 2.0.0)
+      globalize (~> 5.0)
+      refinerycms-pages (~> 3.0.0)
+
 PATH
   remote: vendor/extensions
   specs:
@@ -51,15 +61,10 @@ GEM
     awesome_print (1.7.0)
     babosa (1.0.2)
     bcrypt (3.1.11)
-    better_errors (2.1.1)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.0.6)
-    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -261,7 +266,6 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  better_errors
   byebug
   coffee-rails (~> 4.1.0)
   hirb
@@ -271,6 +275,7 @@ DEPENDENCIES
   refinerycms (~> 3.0)
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.1)
   refinerycms-authentication-devise (~> 1.0)
+  refinerycms-page-images (~> 3.0.0)!
   refinerycms-projects!
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)
