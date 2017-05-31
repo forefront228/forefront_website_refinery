@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    articles:
+      admin:
+        articles:
+          actions:
+            create_new: Přidat Article
+            reorder: Řadit Articles
+            reorder_done: Konec řazení Articles
+          records:
+            title: Articles
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Articles. Zvolte "Přidat Article" pro přidání prvního article.
+          article:
+            view_live_html: Zobrazit náhled article<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit article
+            delete: Smazat article
+      articles:
+        show:
+          other: Další Articles
+  activerecord:
+    attributes:
+      'refinery/articles/article':
+        title: Title
+        text: Text
+        user_id: User

@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    articles:
+      admin:
+        articles:
+          actions:
+            create_new: Yeni Ekle Article
+            reorder: Tekrar sirala Articles
+            reorder_done: Tekrar siralama tamamlandiArticles
+          records:
+            title: Articles
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Articles yok henuz.  Tikla "Yeni Ekle Article" eklemek senin ilk article.
+          article:
+            view_live_html: Bunu canlu article goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle article
+            delete: Bunu Sil article sonsuza dek
+      articles:
+        show:
+          other: Diger Articles
+  activerecord:
+    attributes:
+      'refinery/articles/article':
+        title: Title
+        text: Text
+        user_id: User

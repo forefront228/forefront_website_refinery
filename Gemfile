@@ -66,3 +66,5 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
  gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
 
 gem 'refinerycms-projects', path: 'vendor/extensions'
+
+gem 'refinerycms-articles', path: 'vendor/extensions'
