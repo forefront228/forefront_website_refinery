@@ -1,75 +1,88 @@
-<% content_for :body_content_title do %>
-  <%= @project.name %>
-<% end %>
-
-<% content_for :body do %>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @project.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Description</h1>
-    <p>
-      <%=raw @project.description %>
-    </p>
-  </section>
-  <section>
-    <h1>Featured Image</h1>
-    <p>
-      <%= image_fu @project.featured_image, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Team Name</h1>
-    <p>
-      <%=raw @project.team_name %>
-    </p>
-  </section>
-  <section>
-    <h1>Location</h1>
-    <p>
-      <%=raw @project.location %>
-    </p>
-  </section>
-  <section>
-    <h1>Area</h1>
-    <p>
-      <%=raw @project.area %>
-    </p>
-  </section>
-  <section>
-    <h1>Completion Date</h1>
-    <p>
-      <%=raw @project.completion_date %>
-    </p>
-  </section>
-  <section>
-    <h1>Featured</h1>
-    <p>
-      <%=raw @project.featured %>
-    </p>
-  </section>
-  <section>
-    <h1>Category</h1>
-    <p>
-      <%=raw @project.category_id %>
-    </p>
-  </section>
-<% end %>
-
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="projects">
-      <% @projects.each do |project| %>
-        <li>
-          <%= link_to project.name, refinery.projects_project_path(project) %>
-        </li>
-      <% end %>
+<section id="project-show" class="overflow-hidden slider-banner">
+  <div class="main-slider">
+    <ul class="slides">
+      <li>
+        <%= image_tag(@project.images.first.url,class:"img-fluid text-overlay img-hero") %>
+        <div class="slider-overlay">
+          <div class="slider-table">
+            <div class="slider-vm">
+              <div class="container text-center text-overlay">
+                <h1><%= @project.name %></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
     </ul>
-  </aside>
-<% end %>
+  </div>
+</section>
 
-<%= render '/refinery/content_page' %>
+<section id="project">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Location</th>
+              <th>Size</th>
+              <th>Completion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @project.team_name %></td>
+              <td><%= @project.location %></td>
+              <td><%= number_with_delimiter(@project.area)%>  sq ft</td>
+              <td><%= @project.completion_date.year %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="space-50"></div>
+      <div class="col-md-8 offset-md-2 ">
+        <p><%= @project.description %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="image-gallery">
+  <div class="container">
+    <div class="row">
+        <% @images.each_with_index do |image,i| %>
+          <div class="col-md-3 col-6 padding-override"> <!-- I don't understand why col-xs-6 doesn't work to define column size on mobile -->
+            <div class="gallery-thumbnail-wrapper">
+              <%= image_tag(image.url, onclick:"openModal();currentSlide(#{i+1})", class:"hover-shadow") %>
+            </div>
+          </div>
+        <% end %>
+        <div id="myModal"class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+            <% @images.each do |image| %>
+              <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <div class="modal-slide">
+                  <%= image_tag(image.url) %>
+                </div>
+              </div>
+            <% end %>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="row modal-thumbnails-wrapper">
+              <% @images.each_with_index do |image,i| %>
+              <div class="col-md-1 padding-override">
+                <div class="gallery-thumbnail-wrapper">
+                  <%= image_tag(image.url,class:"demo",onclick:"currentSlide(#{i+1})") %>
+                </div>
+                <!-- <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature"> -->
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
