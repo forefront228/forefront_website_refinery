@@ -1,11 +1,3 @@
-<% content_for :body do %>
-  <ul id="projects">
-    <% @projects.each do |project| %>
-      <li>
-        <%= link_to project.name, refinery.projects_project_path(project) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+<div class="container">
+  <%= render partial: "stub", collection: @projects, as: :project %>
+</div>
