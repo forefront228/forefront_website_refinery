@@ -68,3 +68,4 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 gem 'refinerycms-projects', path: 'vendor/extensions'
 
 gem 'refinerycms-articles', path: 'vendor/extensions'
+gem 'refinerycms-team_members', path: 'vendor/extensions'
