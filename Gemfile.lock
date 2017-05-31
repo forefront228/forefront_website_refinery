@@ -17,6 +17,9 @@ PATH
     refinerycms-projects (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.5)
+    refinerycms-tags (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 3.0.5)
     refinerycms-team_members (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.5)
@@ -284,6 +287,7 @@ DEPENDENCIES
   refinerycms-authentication-devise (~> 1.0)
   refinerycms-page-images (~> 3.0.0)!
   refinerycms-projects!
+  refinerycms-tags!
   refinerycms-team_members!
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)

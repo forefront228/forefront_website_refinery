@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531210143) do
+ActiveRecord::Schema.define(version: 20170531210808) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -217,6 +217,13 @@ ActiveRecord::Schema.define(version: 20170531210143) do
     t.datetime "updated_at"
   end
 
+  create_table "refinery_tags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "refinery_team_members", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -240,5 +247,12 @@ ActiveRecord::Schema.define(version: 20170531210143) do
 
   add_index "seo_meta", ["id"], name: "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], name: "id_type_index_on_seo_meta"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
