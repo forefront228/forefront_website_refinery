@@ -2,6 +2,7 @@ module Refinery
   module Projects
     module Admin
       class ProjectsController < ::Refinery::AdminController
+        before_filter :find_all_categories
 
         crudify :'refinery/projects/project',
                 :title_attribute => 'name'
@@ -15,6 +16,11 @@ module Refinery
           [:name, :description, :picture_id, :team_name, :location, :area, :completion_date, :featured, :category_id, :featured_image_id]
         end
 
+        protected
+
+        def find_all_categories
+          @categories = Category.all
+        end
 
 # Below was the initial file configuration. Changed for the purpose of implementing image collections for Project
         # private
