@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    articles:
+      admin:
+        articles:
+          actions:
+            create_new: Aggiungi Nuovo Article
+            reorder: Riordina Articles
+            reorder_done: Termina il Riordino di Articles
+          records:
+            title: Articles
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Articles. Clicca "Aggiungi Nuovo Article" per aggiungere il tuo primo article.
+          article:
+            view_live_html: Guarda live questo article <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo article
+            delete: Rimuovi per sempre questo article
+      articles:
+        show:
+          other: Altri Articles
+  activerecord:
+    attributes:
+      'refinery/articles/article':
+        title: Title
+        text: Text
+        user_id: User

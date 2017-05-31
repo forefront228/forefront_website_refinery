@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    articles:
+      admin:
+        articles:
+          actions:
+            create_new: Nieuwe Article toevoegen
+            reorder: De volgorde van de Articles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Article-volgorde
+          records:
+            title: Articles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Articles. Druk op 'Nieuwe Article toevoegen' om de eerste toe te voegen.
+          article:
+            view_live_html: Deze article op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze article
+            delete: Deze article definitief verwijderen
+      articles:
+        show:
+          other: Andere Articles
+  activerecord:
+    attributes:
+      'refinery/articles/article':
+        title: Title
+        text: Text
+        user_id: User

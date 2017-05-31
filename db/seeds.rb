@@ -14,3 +14,12 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS Projects extension
 Refinery::Projects::Engine.load_seed
+
+# Added by Refinery CMS Articles extension
+Refinery::Articles::Engine.load_seed
+
+# Added by Refinery CMS TeamMembers extension
+Refinery::TeamMembers::Engine.load_seed
+
+# Added by Refinery CMS Tags extension
+Refinery::Tags::Engine.load_seed
