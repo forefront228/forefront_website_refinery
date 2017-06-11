@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Handle environmental variables
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
@@ -26,7 +27,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'faker'
-
+# Manage Linkedin OAuth2
 gem 'omniauth-linkedin-oauth2'
 
 # Use ActiveModel has_secure_password
