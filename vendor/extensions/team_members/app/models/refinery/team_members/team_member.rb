@@ -2,7 +2,7 @@ module Refinery
   module TeamMembers
     class TeamMember < Refinery::Core::BaseModel
       self.table_name = 'refinery_team_members'
-      before_save :set_images
+      before_save :set_default_images
 
       validates :first_name, :presence => true, :uniqueness => true
 
@@ -16,7 +16,7 @@ module Refinery
 
       private
 
-      def set_images
+      def set_default_images
         self.primary_image ||= Refinery::Image.find_by_image_name('team1.png')
         self.secondary_image ||= Refinery::Image.find_by_image_name('bg-1.jpg')
       end
