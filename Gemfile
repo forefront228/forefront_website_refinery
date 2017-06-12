@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'faker'
 # Manage Linkedin OAuth2
-gem 'omniauth-linkedin-oauth2'
+gem "linkedin-oauth2", "~> 1.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -6,4 +6,4 @@
 </aside>
 <%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Articles::Admin::ArticlesController.sortable? and ::Refinery::Articles::Article.many? %>
 
-<a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=781ao83sc3hvp3&redirect_uri=http%3A%2F%2Flocalhost:3000%2Fauth%2Flinkedin%2Fcallback">Sync Linkedin Articles</a>
+<a href="<%= @url %>">Sync Linkedin Articles</a>
