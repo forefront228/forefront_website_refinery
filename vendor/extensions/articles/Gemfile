@@ -24,6 +24,8 @@ platforms :ruby do
   gem 'pg'
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   gem 'rspec-its' # for the model's validation tests.
   platforms :ruby do

@@ -5,3 +5,5 @@
   <%= render 'actions' %>
 </aside>
 <%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Articles::Admin::ArticlesController.sortable? and ::Refinery::Articles::Article.many? %>
+
+<a href="https://www.linkedin.com/oauth/v2/authorization?client_id=<%=  %>">Sync Linkedin Articles</a>
