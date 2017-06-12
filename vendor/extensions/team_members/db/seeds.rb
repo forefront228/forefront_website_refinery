@@ -20,6 +20,10 @@ end
 
 require 'faker'
 
+#creating refinery image primary_image and secondary_image filler
+Refinery::Image.create(image:File.new('app/assets/images/team1.png'))
+Refinery::Image.create(image:File.new('app/assets/images/bg-1.jpg'))
+
 team_members = [
   {
     first_name: "Logan",
