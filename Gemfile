@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# generate thumbnails from linkedin data
+gem 'link_thumbnailer'
 # Handle environmental variables
 gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -23,6 +23,7 @@ module Refinery
 
           binding.pry
 
+          # Article.destroy_all
 
           linkedin_articles.each do |article|
 
@@ -30,7 +31,7 @@ module Refinery
 
 
 
-          redirect_to("/refinery/articles")
+          redirect_to(articles_admin_articles_path)
         end
 
         private

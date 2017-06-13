@@ -2,36 +2,17 @@ module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
 
-    before_action :find_page, :set_canonical, except: [:contact, :callback]
-    before_action :error_404, unless: :current_user_can_view_page?, except: [:contact, :callback]
+    before_action :find_page, :set_canonical, except: [:contact]
+    before_action :error_404, unless: :current_user_can_view_page?, except: [:contact]
 
     # Save whole Page after delivery
     after_action :write_cache?
 
     # This action is usually accessed with the root path, normally '/'
     def home
-      oauth = LinkedIn::OAuth2.new
-
-      @url = oauth.auth_code_url
-
       @projects = ::Refinery::Projects::Project.where(featured:true)
       @articles = ::Refinery::Articles::Article.order(created_at: :desc).limit(3)
       render_with_templates?
-    end
-
-    def callback
-      code = params["code"]
-      oauth = LinkedIn::OAuth2.new
-      access_token = oauth.get_access_token(code)
-
-      api = LinkedIn::API.new(access_token)
-
-      # binding.pry
-
-      @updates = api.company_updates(id: 3277007)["all"]
-
-
-      render("refinery/pages/test.html.erb")
     end
 
     def contact
