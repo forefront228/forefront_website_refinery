@@ -29,7 +29,7 @@
     <ul id="articles">
       <% @articles.each do |article| %>
         <li>
-          <%= link_to article.title, refinery.article_path(article) %>
+          <%= link_to article.title, refinery.articles_article_path(article) %>
         </li>
       <% end %>
     </ul>

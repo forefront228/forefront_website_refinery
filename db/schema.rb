@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601000936) do
+ActiveRecord::Schema.define(version: 20170531210808) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -254,7 +254,5 @@ ActiveRecord::Schema.define(version: 20170601000936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "taggings", ["project_id", "tag_id"], name: "index_taggings_on_project_id_and_tag_id", unique: true
 
 end
