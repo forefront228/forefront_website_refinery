@@ -10,10 +10,6 @@ module Refinery
 
     # This action is usually accessed with the root path, normally '/'
     def home
-      p "************************"
-      p ENV['LINKEDIN_KEY']
-      p "************************"
-
       oauth = LinkedIn::OAuth2.new
 
       @url = oauth.auth_code_url
@@ -24,9 +20,6 @@ module Refinery
     end
 
     def callback
-      p "****************"
-      p "in the callback method"
-      p "****************"
       code = params["code"]
       oauth = LinkedIn::OAuth2.new
       access_token = oauth.get_access_token(code)

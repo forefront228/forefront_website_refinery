@@ -1,9 +1,9 @@
 <section id='records'>
+  <a href="<%= LinkedIn::OAuth2.new.auth_code_url %>">Get LinkedIn Updates</a>
+
   <%= render 'records' %>
 </section>
 <aside id='actions'>
   <%= render 'actions' %>
 </aside>
 <%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Articles::Admin::ArticlesController.sortable? and ::Refinery::Articles::Article.many? %>
-
-<a href="<%= @url %>">Sync Linkedin Articles</a>
