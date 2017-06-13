@@ -21,10 +21,10 @@ module Refinery
 
           linkedin_articles = api.company_updates(id: 3277007)["all"]
 
-          binding.pry
+          # binding.pry
 
           # Article.destroy_all
-          article_timestamps = Artical.all.pluck(:created_at)
+          article_timestamps = Article.all.pluck(:created_at)
 
           linkedin_articles.each do |article|
             timestamp = DateTime.strptime(article["timestamp"].to_s, '%M')
@@ -46,7 +46,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def article_params
-          params.require(:article).permit(:title, :text, :user_id)
+          params.require(:article).permit(:content, :submitted_url, :user_id)
         end
       end
     end

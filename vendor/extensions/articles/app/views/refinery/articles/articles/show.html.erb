@@ -1,12 +1,12 @@
-<% content_for :body_content_title do %>
-  <%= @article.title %>
+content<% content_for :body_content_title do %>
+  <%= @article.content %>
 <% end %>
 
 <% content_for :body do %>
   <section>
-    <h1>Title</h1>
+    <h1>content</h1>
     <p>
-      <%=raw @article.title %>
+      <%=raw @article.content %>
     </p>
   </section>
   <section>
@@ -29,7 +29,7 @@
     <ul id="articles">
       <% @articles.each do |article| %>
         <li>
-          <%= link_to article.title, refinery.article_path(article) %>
+          <%= link_to article.content, refinery.article_path(article) %>
         </li>
       <% end %>
     </ul>
