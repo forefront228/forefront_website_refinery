@@ -11,9 +11,6 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
-    refinerycms-articles (1.0)
-      acts_as_indexed (~> 0.8.0)
-      refinerycms-core (~> 3.0.5)
     refinerycms-projects (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.5)
@@ -356,7 +353,6 @@ DEPENDENCIES
   rails (= 4.2.8)
   refinerycms (~> 3.0)
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.1)
-  refinerycms-articles!
   refinerycms-authentication-devise (~> 1.0)
   refinerycms-page-images (~> 3.0.0)!
   refinerycms-projects!
