@@ -16,7 +16,7 @@
   </div>
 
   <div class='field'>
-    <%= f.label :featured_image -%>
+    <%= f.label :featured_image, 'Main image' -%>
     <%= render '/refinery/admin/image_picker',
                :f => f,
                :field => :featured_image_id,
@@ -45,7 +45,7 @@
   </div>
 
   <div class='field'>
-    <%= f.label :featured -%>
+    <%= f.label :featured, 'Is this project featured?' -%>
     <%= f.check_box :featured, :checked => @project[:featured] -%>
   </div>
 

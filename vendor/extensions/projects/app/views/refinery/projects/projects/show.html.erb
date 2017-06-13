@@ -21,6 +21,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
+        <div class="spacer">
+
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -40,15 +43,15 @@
           </tbody>
         </table>
       </div>
-      <div class="space-50"></div>
+      <div class="space-20"></div>
       <div class="col-md-8 offset-md-2 ">
-        <p><%= @project.description %></p>
+        <p><%= raw(@project.description) %></p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="image-gallery">
+<section id="image-gallery" class="spacer">
   <div class="container">
     <div class="row">
         <% @images.each_with_index do |image,i| %>
@@ -86,3 +89,6 @@
     </div>
   </div>
 </section>
+<div class="spacer">
+
+</div>
