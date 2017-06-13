@@ -5,7 +5,7 @@ module Refinery
 
 
       validates :name, :presence => true, :uniqueness => true
-      validates :featured_image, :presence => true
+      # validates :featured_image, :presence => true
 
       has_many_page_images
       has_many :taggings
