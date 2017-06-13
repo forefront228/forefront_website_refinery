@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613185408) do
+ActiveRecord::Schema.define(version: 20170613192645) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170613185408) do
 
   create_table "refinery_articles", force: :cascade do |t|
     t.string   "submitted_url"
-    t.text     "text"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "position"
     t.datetime "created_at"

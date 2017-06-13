@@ -24,8 +24,16 @@ module Refinery
           binding.pry
 
           # Article.destroy_all
+          article_timestamps = Artical.all.pluck(:created_at)
 
           linkedin_articles.each do |article|
+            timestamp = DateTime.strptime(article["timestamp"].to_s, '%M')
+            if article_timestamps.include?(timestamp)
+              p "included already"
+            else
+              p "make a new article"
+              Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: article['update_content']['company_status_update']['share']['content']['submitted_url'])
+            end
 
           end
 
