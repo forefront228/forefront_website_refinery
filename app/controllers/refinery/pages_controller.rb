@@ -2,8 +2,8 @@ module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
 
-    before_action :find_page, :set_canonical
-    before_action :error_404, unless: :current_user_can_view_page?
+    before_action :find_page, :set_canonical, except: :contact
+    before_action :error_404, unless: :current_user_can_view_page?, except: :contact
 
     # Save whole Page after delivery
     after_action :write_cache?
@@ -11,7 +11,12 @@ module Refinery
     # This action is usually accessed with the root path, normally '/'
     def home
       @projects = ::Refinery::Projects::Project.where(featured:true)
+      @articles = ::Refinery::Articles::Article.order(created_at: :desc).limit(3)
       render_with_templates?
+    end
+
+    def contact
+      render "partials/_contact"
     end
 
     # This action can be accessed normally, or as nested pages.

@@ -1,11 +1,55 @@
-<% content_for :body do %>
-  <ul id="team_members">
-    <% @team_members.each do |team_member| %>
+<section id="team" class="overflow-hidden slider-banner">
+  <div class="main-slider">
+    <ul class="slides">
       <li>
-        <%= link_to team_member.first_name, refinery.team_members_team_member_path(team_member) %>
+        <img src="<%= "https://static.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" %>" alt="" class="img-fluid img-hero">
+        <div class="slider-overlay">
+          <div class="slider-table">
+            <div class="slider-vm">
+              <div class="container text-center text-overlay">
+                <h1>Teams</h1>
+              </div>
+            </div>
+          </div>
+        </div><!--slider overlay end-->
       </li>
-    <% end %>
-  </ul>
-<% end %>
+    </ul>
+  </div>
+</section>
 
-<%= render '/refinery/content_page' %>
+<div class='space-80'></div>
+<div class='container'>
+  <h1 class='text-center section-title'>
+    Where idea's born
+  </h1>
+  <div class="row margin-b-40">
+    <div class="col-sm-6">
+      <p>
+        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <p>
+        But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <% @team_members.each do |person| %>
+    <div class="col-md-4 margin-b-30">
+      <a href="/team/<%= person.id %>">
+      <div class="person-col">
+          <%= image_tag(person.primary_image.url,class:"img-fluid") %>
+        <div class="person-overlay">
+          <div class="person-inner">
+            <h4 class="text-uppercase"><%= person.first_name + " " + person.last_name %></h4>
+            <span><%= person.role %></span>
+          </div>
+        </div><!--person overlay end-->
+      </div><!--person col end-->
+      </a>
+    </div><!--col-->
+    <% end %>
+  </div><!--row-->
+
+</div>

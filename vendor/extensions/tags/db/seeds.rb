@@ -17,3 +17,8 @@ Refinery::I18n.frontend_locales.each do |lang|
     end
   end if defined?(Refinery::Page)
 end
+
+require 'faker'
+
+7.times { Refinery::Tags::Tag.create(name:Faker::Lorem.word) }
+Refinery::Projects::Project.all.each { |project| project.tags=(Refinery::Tags::Tag.all.sample(rand(2..Refinery::Tags::Tag.count))) }

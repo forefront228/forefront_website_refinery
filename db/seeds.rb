@@ -9,6 +9,14 @@
 %w(Residential Institutional Mixed-Use Hospitality Commercial).each do |c|
   Category.create(name:c)
 end
+
+user_data = [
+  {username:"Logan", email:"l@l.com", password: "password"},
+  {username:"Pavan", email:"p@p.com", password: "password"},
+  {username:"Arjun", email:"a@a.com", password: "password"}
+]
+user_data.each { |u| Refinery::Authentication::Devise::User.new(u).create_first }
+
 # Added by Refinery CMS Pages extension
 Refinery::Pages::Engine.load_seed
 
