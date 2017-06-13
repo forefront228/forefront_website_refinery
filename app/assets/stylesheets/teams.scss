@@ -12,3 +12,18 @@
   width:100vw;
   height:51vw;
 }
+
+// team_members index thumbnail styling
+
+.team_member-thumbnail-wrapper{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+
+}
+.team_member-thumbnail-wrapper img {
+    position:absolute;
+    object-fit: cover;
+    height:100%;
+    width:100%;
+}
