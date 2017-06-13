@@ -20,7 +20,7 @@
 <div class='space-80'></div>
 <div class='container'>
   <h1 class='text-center section-title'>
-    Where idea's born
+    Where ideas are born
   </h1>
   <div class="row margin-b-40">
     <div class="col-sm-6">
@@ -35,11 +35,14 @@
     </div>
   </div>
   <div class="row">
+
+
     <% @team_members.each do |person| %>
+
     <div class="col-md-4 margin-b-30">
-      <a href="/team/<%= person.id %>">
-      <div class="person-col">
-          <%= image_tag(person.primary_image.url,class:"img-fluid") %>
+      <div class="person-col team_member-thumbnail-wrapper">
+        <a href="/team/<%= person.id %>">
+        <%= image_tag(person.primary_image.url) %>
         <div class="person-overlay">
           <div class="person-inner">
             <h4 class="text-uppercase"><%= person.first_name + " " + person.last_name %></h4>
@@ -49,7 +52,10 @@
       </div><!--person col end-->
       </a>
     </div><!--col-->
+
     <% end %>
+
+
   </div><!--row-->
 
 </div>
