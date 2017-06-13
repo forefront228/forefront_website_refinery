@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @article.submitted_url %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @article.content %>
+    </p>
+  </section>
+  <section>
+    <h1>Submitted Url</h1>
+    <p>
+      <%=raw @article.submitted_url %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="articles">
+      <% @articles.each do |article| %>
+        <li>
+          <%= link_to article.submitted_url, refinery.articles_article_path(article) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

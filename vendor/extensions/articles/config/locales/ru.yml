@@ -1,0 +1,28 @@
+ru:
+  refinery:
+    plugins:
+      articles:
+        title: Articles
+    articles:
+      admin:
+        articles:
+          actions:
+            create_new: Добавить Article
+            reorder: Изменить порядок Articles
+            reorder_done: Закончить изменять порядок Articles
+          records:
+            title: Articles
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Articles" не найдено. Нажмите "Добавить Article" чтобы создать article.
+          article:
+            view_live_html: Просмотреть article вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать article
+            delete: Удалить article навсегда
+      articles:
+        show:
+          other: Другие Articles
+  activerecord:
+    attributes:
+      'refinery/articles/article':
+        content: Content
+        submitted_url: Submitted Url
