@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601000936) do
+ActiveRecord::Schema.define(version: 20170613215615) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "refinery_articles", force: :cascade do |t|
+    t.text     "content"
+    t.string   "submitted_url"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "refinery_authentication_devise_roles", force: :cascade do |t|

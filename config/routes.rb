@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/contact' => 'refinery/pages#contact'
   mount Refinery::Core::Engine, at: Refinery::Core.mounted_path
 
-  # linkedin auth callback
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
