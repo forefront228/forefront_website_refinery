@@ -21,6 +21,7 @@ module Refinery
           # binding.pry
 
           # Article.destroy_all
+
           article_timestamps = Article.all.pluck(:created_at)
 
           linkedin_articles.each do |article|
