@@ -1,11 +1,35 @@
-<% content_for :body do %>
-  <ul id="articles">
-    <% @articles.each do |article| %>
+<section id="news" class="overflow-hidden slider-banner">
+  <div class="main-slider">
+    <ul class="slides">
       <li>
-        <%= link_to article.submitted_url, refinery.articles_article_path(article) %>
+        <img src="<%= "http://www.forefrontstructural.com/images/dalian.jpg" %>" width="100%" alt="" class="img-fluid">
+        <div class="slider-overlay">
+          <div class="slider-table">
+            <div class="slider-vm">
+              <div class="container text-center text-overlay">
+                <h1>News</h1>
+              </div>
+            </div>
+          </div>
+        </div><!--slider overlay end-->
       </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+    </ul>
+  </div>
+</section>
+<!-- news section -->
+<section id="services">
+  <div class="space-100"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <ul class="row list-unstyled services-list">
+          <%= render partial: "stub", collection: @articles, as: :article%>
+        </ul><!--service list end-->
+        <div class="col-md-12 text-center">
+          <a href="#" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
+        </div>
+      </div>
+    </div><!--row end-->
+    <div class="space-60"></div>
+  </div>
+</section>
