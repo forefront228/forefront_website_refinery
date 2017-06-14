@@ -11,7 +11,7 @@ module Refinery
     # This action is usually accessed with the root path, normally '/'
     def home
       @projects = ::Refinery::Projects::Project.where(featured:true)
-      @articles = ::Refinery::Articles::Article.order(created_at: :desc).limit(3)
+      @articles = ::Refinery::Articles::Article.order(created_at: :asc).limit(3)
       render_with_templates?
     end
 
