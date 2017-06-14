@@ -9,8 +9,8 @@ describe Refinery do
 
         describe "articles list" do
           before do
-            FactoryGirl.create(:article, :title => "UniqueTitleOne")
-            FactoryGirl.create(:article, :title => "UniqueTitleTwo")
+            FactoryGirl.create(:article, :submitted_url => "UniqueTitleOne")
+            FactoryGirl.create(:article, :submitted_url => "UniqueTitleTwo")
           end
 
           it "shows two items" do
@@ -29,7 +29,7 @@ describe Refinery do
 
           context "valid data" do
             it "should succeed" do
-              fill_in "Title", :with => "This is a test of the first string field"
+              fill_in "Submitted Url", :with => "This is a test of the first string field"
               expect { click_button "Save" }.to change(Refinery::Articles::Article, :count).from(0).to(1)
 
               expect(page).to have_content("'This is a test of the first string field' was successfully added.")
@@ -40,19 +40,19 @@ describe Refinery do
             it "should fail" do
               expect { click_button "Save" }.not_to change(Refinery::Articles::Article, :count)
 
-              expect(page).to have_content("Title can't be blank")
+              expect(page).to have_content("Submitted Url can't be blank")
             end
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:article, :title => "UniqueTitle") }
+            before { FactoryGirl.create(:article, :submitted_url => "UniqueTitle") }
 
             it "should fail" do
               visit refinery.articles_admin_articles_path
 
               click_link "Add New Article"
 
-              fill_in "Title", :with => "UniqueTitle"
+              fill_in "Submitted Url", :with => "UniqueTitle"
               expect { click_button "Save" }.not_to change(Refinery::Articles::Article, :count)
 
               expect(page).to have_content("There were problems")
@@ -62,7 +62,7 @@ describe Refinery do
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:article, :title => "A title") }
+          before { FactoryGirl.create(:article, :submitted_url => "A submitted_url") }
 
           it "should succeed" do
             visit refinery.articles_admin_articles_path
@@ -71,16 +71,16 @@ describe Refinery do
               click_link "Edit this article"
             end
 
-            fill_in "Title", :with => "A different title"
+            fill_in "Submitted Url", :with => "A different submitted_url"
             click_button "Save"
 
-            expect(page).to have_content("'A different title' was successfully updated.")
-            expect(page).not_to have_content("A title")
+            expect(page).to have_content("'A different submitted_url' was successfully updated.")
+            expect(page).not_to have_content("A submitted_url")
           end
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:article, :title => "UniqueTitleOne") }
+          before { FactoryGirl.create(:article, :submitted_url => "UniqueTitleOne") }
 
           it "should succeed" do
             visit refinery.articles_admin_articles_path

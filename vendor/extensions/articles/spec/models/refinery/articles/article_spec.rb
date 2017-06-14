@@ -6,12 +6,12 @@ module Refinery
       describe "validations", type: :model do
         subject do
           FactoryGirl.create(:article,
-          :title => "Refinery CMS")
+          :submitted_url => "Refinery CMS")
         end
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:title) { should == "Refinery CMS" }
+        its(:submitted_url) { should == "Refinery CMS" }
       end
     end
   end

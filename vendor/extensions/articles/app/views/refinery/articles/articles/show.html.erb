@@ -1,24 +1,18 @@
 <% content_for :body_content_title do %>
-  <%= @article.title %>
+  <%= @article.submitted_url %>
 <% end %>
 
 <% content_for :body do %>
   <section>
-    <h1>Title</h1>
+    <h1>Content</h1>
     <p>
-      <%=raw @article.title %>
+      <%=raw @article.content %>
     </p>
   </section>
   <section>
-    <h1>Text</h1>
+    <h1>Submitted Url</h1>
     <p>
-      <%=raw @article.text %>
-    </p>
-  </section>
-  <section>
-    <h1>User</h1>
-    <p>
-      <%=raw @article.user_id %>
+      <%=raw @article.submitted_url %>
     </p>
   </section>
 <% end %>
@@ -29,7 +23,7 @@
     <ul id="articles">
       <% @articles.each do |article| %>
         <li>
-          <%= link_to article.title, refinery.article_path(article) %>
+          <%= link_to article.submitted_url, refinery.articles_article_path(article) %>
         </li>
       <% end %>
     </ul>

@@ -24,6 +24,5 @@ nl:
   activerecord:
     attributes:
       'refinery/articles/article':
-        title: Title
-        text: Text
-        user_id: User
+        content: Content
+        submitted_url: Submitted Url

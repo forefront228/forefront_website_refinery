@@ -17,9 +17,3 @@ Refinery::I18n.frontend_locales.each do |lang|
     end
   end if defined?(Refinery::Page)
 end
-
-require 'faker'
-
-10.times do
-  Refinery::Articles::Article.create(title:Faker::Lorem.sentence,text:Faker::Lorem.paragraph)
-end

@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+# generate thumbnails from linkedin data
+gem 'link_thumbnailer'
+# Handle environmental variables
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
@@ -26,6 +29,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'faker'
+# Manage Linkedin OAuth2
+gem "linkedin-oauth2", "~> 1.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,12 +49,13 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'pry-rails'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
   gem 'hirb'
-  # gem 'better_errors'
+  gem 'better_errors'
   gem 'table_print'
   gem 'awesome_print'
 end
@@ -68,6 +74,7 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
  gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
 
 gem 'refinerycms-projects', path: 'vendor/extensions'
-gem 'refinerycms-articles', path: 'vendor/extensions'
 gem 'refinerycms-team_members', path: 'vendor/extensions'
 gem 'refinerycms-tags', path: 'vendor/extensions'
+
+gem 'refinerycms-articles', path: 'vendor/extensions'

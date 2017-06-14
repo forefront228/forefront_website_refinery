@@ -2,9 +2,8 @@ class CreateArticlesArticles < ActiveRecord::Migration
 
   def up
     create_table :refinery_articles do |t|
-      t.string :title
-      t.text :text
-      t.integer :user_id
+      t.text :content
+      t.string :submitted_url
       t.integer :position
 
       t.timestamps
