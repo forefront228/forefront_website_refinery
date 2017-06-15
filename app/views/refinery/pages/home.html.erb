@@ -4,7 +4,7 @@
 <!--/preloader -->
 <!-- slider start-->
 
-<section id="home" class="overflow-hidden slider-banner">
+<section id="home-hero" class="overflow-hidden slider-banner hero-banner">
   <div class="main-slider">
     <ul class="slides">
       <%= render partial: "refinery/projects/projects/project-feature", collection: @projects, as: :project%>
@@ -15,7 +15,6 @@
 <!-- news section -->
 <div class="space-100"></div>
 <section id="news">
-  <div class="space-100"></div>
   <div class="container">
     <h2 class="center-title scrollReveal sr-bottom">News</h2>
     <div class="center-border"></div>
@@ -63,7 +62,7 @@
             </div>
           </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="culture">
+        <div role="tabpanel" class="tab-pane " id="culture">
           <div class="col-md-8 offset-md-2 text-center">
             <p class="lead">
               “Forefront” refers to several intrinsic qualities of our firm. Our goal is to be at the forefront of our profession by setting the modern standard of structural engineering excellence. We accomplish this with new techniques and solutions guided by the context of history and experience. Our name also reflects our corporate and personal commitment to reach the world through our profession. Our work, our people, and our vision extend globally.
@@ -73,7 +72,7 @@
             </p>
           </div>
         </div><!--tab panel end-->
-        <div role="tabpanel" class="tab-pane" id="humanitarian">
+        <div role="tabpanel" class="tab-pane " id="humanitarian">
           <div class="col-md-8 offset-md-2 text-center">
             <p class="lead">
               At FSE we believe God has given us both the responsibility and joy of being mercy minded.   We think that our job as structural engineers is to be the best we possibly can, and to conduct business at the highest level as we work with people groups throughout the cities of our world.  The city is the heart of a state or province or country.  It is also the center of modern invention, construction, and innovation.  But it is the hearts of people that reflect their true needs.
@@ -92,12 +91,15 @@
       </div><!--tab content end-->
     </div>
   </div><!--container end-->
-  <div class="space-80"></div>
+
 </section>
 <!--end about section-->
+<section id="contact" class="contact-section">
+  <div class="space-100">
 
-<%= render "partials/contact" %>
-
+  </div>
+  <%= render "partials/contact" %>
+</section>
 <!--modal of video-->
 <!-- <div class="modal video-modal fade" id="video-popup" tabindex="-1" role="dialog" aria-labelledby="video-popup">
   <div class="modal-dialog" role="document">
@@ -119,13 +121,18 @@
 <!--end the modal of video-->
 
 <script>
-  $('.news-item').click(function(e){
-    $(this).addClass('expanded');
-  })
+  /////////////setting tabs height in organization section///////////////
+  var biggestHeight = 0;
+  // Loop through elements children to find & set the biggest height
+  $(".tab-pane *").each(function(){
+   // If this elements height is bigger than the biggestHeight
+   if ($(this).height() > biggestHeight ) {
+     // Set the biggestHeight to this Height
+     biggestHeight = $(this).height();
+   }
+  });
 
-  $('.see-less').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $(this).parents('.news-item').removeClass('expanded');
-  })
+  // Set the container height
+  $(".tab-content").height(biggestHeight);
+
 </script>
