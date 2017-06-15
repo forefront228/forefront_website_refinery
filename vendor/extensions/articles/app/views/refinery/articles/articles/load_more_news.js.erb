@@ -1,0 +1,8 @@
+<% @articles.each do |article| %>
+  $('#articles-list').append("<%= j(render('stub', article: article)) %>");
+<% end %>
+<% if @articles.last.id > params[:article_id].to_i + @num_of_new_articles - 1 %>
+  $('#load-more-link').data("params", "article_id=<%= @articles.last.id %>");
+<% else %>
+  $('#load-more-link').hide();
+<% end %>

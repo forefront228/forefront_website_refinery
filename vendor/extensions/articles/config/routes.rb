@@ -2,6 +2,7 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
 resources :articles, path: '/news', controller: 'articles/articles', only: [:index,:show]
+get '/load_more_news' => 'articles/articles#load_more_news', as: 'load_more_news'
 
   # Admin routes
   namespace :articles, :path => '' do
