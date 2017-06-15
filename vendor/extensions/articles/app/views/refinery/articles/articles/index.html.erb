@@ -22,11 +22,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <ul class="row list-unstyled services-list">
+        <ul class="row list-unstyled services-list" id="articles-list">
           <%= render partial: "stub", collection: @articles, as: :article%>
         </ul><!--service list end-->
         <div class="col-md-12 text-center">
-          <a href="#" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
+          <a href="/load_more_news" data-remote="true" data-params="article_id=<%= @articles.last.id %>" id="load-more-link" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
         </div>
       </div>
     </div><!--row end-->

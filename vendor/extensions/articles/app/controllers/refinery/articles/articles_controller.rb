@@ -19,10 +19,21 @@ module Refinery
         present(@page)
       end
 
+      def load_more_news
+        @num_of_new_articles = 3
+        @articles = Article.where("id > ?", params[:article_id]).take(@num_of_new_articles)
+        puts @articles.inspect
+        respond_to do |format|
+          format.html
+          format.json { render json: @resource }
+          format.js
+        end
+      end
+
     protected
 
       def find_all_articles
-        @articles = Article.order('position ASC')
+        @articles = Article.order('position ASC').limit(3)
       end
 
       def find_page
