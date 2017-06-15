@@ -10,8 +10,14 @@ module Refinery
       #
       #   acts_as_indexed :fields => [:title]
 
-      def thumbnailer_object
-        return LinkThumbnailer.generate(self.submitted_url)
+      def thumbnailer_videos
+        LinkThumbnailer.generate(self.submitted_url).videos
+      end
+
+      def thumbnailer_images
+        if LinkThumbnailer.generate(self.submitted_url).images[0]
+          LinkThumbnailer.generate(self.submitted_url).images[0].src
+        end
       end
 
     end
