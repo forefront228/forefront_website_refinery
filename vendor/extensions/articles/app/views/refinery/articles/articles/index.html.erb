@@ -1,8 +1,8 @@
-<section id="news" class="overflow-hidden slider-banner">
+<section id="news-index-hero" class="overflow-hidden slider-banner hero-banner">
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <img src="<%= "http://www.forefrontstructural.com/images/dalian.jpg" %>" width="100%" alt="" class="img-fluid">
+        <img src="<%= "http://www.commonsenseleadership.com/wp-content/uploads/2015/11/bigstock-Group-of-Multiethnic-Busy-Peop-66058333.jpg" %>" width="100%" alt="" class="img-fluid img-hero">
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
@@ -22,11 +22,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <ul class="row list-unstyled services-list">
+        <ul class="row list-unstyled services-list" id="articles-list">
           <%= render partial: "stub", collection: @articles, as: :article%>
         </ul><!--service list end-->
         <div class="col-md-12 text-center">
-          <a href="#" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
+          <a href="/load_more_news" data-remote="true" data-params="article_id=<%= @articles.last.id %>" id="load-more-link" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
         </div>
       </div>
     </div><!--row end-->

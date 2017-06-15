@@ -16,7 +16,7 @@ module Refinery
     end
 
     def contact
-      render "partials/_contact"
+      render "contact"
     end
 
     # This action can be accessed normally, or as nested pages.
