@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170613215615) do
     t.string   "video_embed"
     t.string   "image_url"
     t.string   "linkedin_timestamp"
-    t.string   "thumbnail_url"
+    t.string   "shortened_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

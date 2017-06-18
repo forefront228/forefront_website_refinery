@@ -39,11 +39,11 @@ module Refinery
               p "make a new article"
               p "*********************"
               if thumbnailer.videos.count == 0 && thumbnailer.images.count == 0
-                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']["submitted_image_url"], thumbnail_url: article['update_content']['company_status_update']['share']['content']["thumbnail_url"], linkedin_timestamp: article['timestamp'].to_s)
+                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']["submitted_image_url"], shortened_url: article['update_content']['company_status_update']['share']['content']["shortened_url"], linkedin_timestamp: article['timestamp'].to_s)
               elsif thumbnailer.videos.count == 0
-                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']["submitted_image_url"], thumbnail_url: article['update_content']['company_status_update']['share']['content']["thumbnail_url"], linkedin_timestamp: article['timestamp'].to_s)
+                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']["submitted_image_url"], shortened_url: article['update_content']['company_status_update']['share']['content']['shortened_url'], linkedin_timestamp: article['timestamp'].to_s)
               else
-                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']["submitted_image_url"], video_embed: thumbnailer.videos[0].embed_code, thumbnail_url: article['update_content']['company_status_update']['share']['content']['thumbnail_url'], linkedin_timestamp: article['timestamp'].to_s)
+                Article.create(content: article['update_content']['company_status_update']['share']['comment'], submitted_url: submitted_url, image_url: article['update_content']['company_status_update']['share']['content']['submitted_image_url'], video_embed: thumbnailer.videos[0].embed_code, shortened_url: article['update_content']['company_status_update']['share']['content']['shortened_url'], linkedin_timestamp: article['timestamp'].to_s)
               end
             end
           end

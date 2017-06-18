@@ -9,7 +9,7 @@ class CreateArticlesArticles < ActiveRecord::Migration
       t.string :video_embed
       t.string :image_url
       t.string :linkedin_timestamp
-      t.string :thumbnail_url
+      t.string :shortened_url
 
       t.timestamps
     end
