@@ -6,6 +6,10 @@ class CreateArticlesArticles < ActiveRecord::Migration
       t.text :content
       t.string :submitted_url
       t.integer :position
+      t.string :video_embed
+      t.string :image_url
+      t.string :linkedin_timestamp
+      t.string :shortened_url
 
       t.timestamps
     end
