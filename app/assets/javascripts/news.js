@@ -9,6 +9,5 @@ $(document).on('turbolinks:load',function(){
     e.stopPropagation();
     $(this).parent().siblings('div.news-main-img').hide();
     $(this).parents('.news-item').removeClass('expanded');
-    $(this).closest('div.news-main-img').hide();
   });
 });
