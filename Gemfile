@@ -17,6 +17,7 @@ gem 'pg', :group => :production
 group :production do
   gem 'rails_12factor'
   gem 'puma'
+  gem 'dragonfly-s3_data_store'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
