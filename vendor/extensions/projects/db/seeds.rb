@@ -18,6 +18,8 @@ Refinery::I18n.frontend_locales.each do |lang|
   end if defined?(Refinery::Page)
 end
 
+Refinery::Projects::Project.destroy_all
+
 neiu = {
   name:"Northeastern Illinois University",
   team_name:"Juan Moreno Architechts (JGMA)",
