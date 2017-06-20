@@ -18,7 +18,13 @@ Refinery::I18n.frontend_locales.each do |lang|
   end if defined?(Refinery::Page)
 end
 
-require 'faker'
+Refinery::Tags::Tag.destroy_all
 
-7.times { Refinery::Tags::Tag.create(name:Faker::Lorem.word) }
+require 'faker'
+tags = ["Residential", "Commercial", "Hospitality", "Institutional", "Community", "Mixed-Use", "Adaptive", "New Construction"]
+
+tags.each do |tag|
+  Refinery::Tags::Tag.create(name:tag)
+end
+
 Refinery::Projects::Project.all.each { |project| project.tags=(Refinery::Tags::Tag.all.sample(rand(2..Refinery::Tags::Tag.count))) }

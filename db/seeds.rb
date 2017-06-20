@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Category.destroy_all
+Refinery::Authentication::Devise::User.destroy_all
+
 %w(Residential Institutional Mixed-Use Hospitality Commercial).each do |c|
   Category.create(name:c)
 end

@@ -13,6 +13,7 @@ module Refinery
 
       def show
         @tag = Tag.find(params[:id])
+        @projects = @tag.projects 
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @tag in the line below:
