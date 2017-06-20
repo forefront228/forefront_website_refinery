@@ -1,27 +1,8 @@
-<% content_for :body_content_title do %>
-  <%= @tag.name %>
-<% end %>
+<div class="container">
+  <div class="tag-results">
+    <h2 id="tag-show-header">Showing Results For: </h2> <a href="/tags/<%= @tag.id %>" class="btn btn-lg btn-skin-border project-tags"><%= @tag.name %></a>
+  </div>
 
-<% content_for :body do %>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @tag.name %>
-    </p>
-  </section>
-<% end %>
+  <%= render partial: "stub", collection: @projects, as: :project %>
 
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="tags">
-      <% @tags.each do |tag| %>
-        <li>
-          <%= link_to tag.name, refinery.tags_tag_path(tag) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+</div>
