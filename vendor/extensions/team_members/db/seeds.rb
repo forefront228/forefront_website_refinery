@@ -20,7 +20,6 @@ end
 
 require 'faker'
 
-Refinery::Image.destroy_all
 Refinery::TeamMembers::TeamMember.destroy_all
 
 #creating refinery image primary_image and secondary_image filler
