@@ -18,6 +18,8 @@ Refinery::I18n.frontend_locales.each do |lang|
   end if defined?(Refinery::Page)
 end
 
+Refinery::Tags::Tag.destroy_all
+
 require 'faker'
 tags = ["Residential", "Commercial", "Hospitality", "Institutional", "Community", "Mixed-Use", "Adaptive", "New Construction"]
 
