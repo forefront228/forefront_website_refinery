@@ -192,6 +192,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (2.0.5)
+    puma (3.9.1)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -360,6 +361,7 @@ DEPENDENCIES
   linkedin-oauth2 (~> 1.0)
   pg
   pry-rails
+  puma
   rails (= 4.2.8)
   rails_12factor
   refinerycms (~> 3.0)
