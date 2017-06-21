@@ -9,7 +9,16 @@ module Refinery
         :title_attribute => 'name'
 
         def create
-          if Refinery::Projects::Project.create(project_params).valid?
+
+          project = Refinery::Projects::Project.create(project_params)
+
+          if project.valid?
+            if params["tags"]
+              tags = params["tags"]["ids"]
+              tags.each do |id|
+                project.taggings.create(tag_id: id.to_i, project_id: project.id)
+              end
+            end
             flash.notice = t(
             'refinery.crudify.created',
             :what => "#{params["project"]["name"]}"
@@ -23,15 +32,14 @@ module Refinery
         def update
           @project = Refinery::Projects::Project.find_by(id: params[:id])
 
-          @project.taggings.destroy_all
-
-          tags = params["tags"]["ids"]
-
-          tags.each do |id|
-            @project.taggings.create(tag_id: id.to_i, project_id: @project.id)
-          end
-
           if @project.update_attributes(project_params)
+            @project.taggings.destroy_all
+            if params["tags"]
+              tags = params["tags"]["ids"]
+              tags.each do |id|
+                @project.taggings.create(tag_id: id.to_i, project_id: @project.id)
+              end
+            end
             flash.notice = t(
             'refinery.crudify.updated',
             :what => "#{@project.name}"
