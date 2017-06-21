@@ -1,5 +1,6 @@
 <li>
-  <%= image_tag(project.featured_image.url, class:"img-hero") %>
+  <%#= image_tag(asset_path project.featured_image.url, class:"img-hero") %>
+  <img class="img-hero" src="<%= asset_path project.featured_image.image_name %>" alt="">
   <div class="slider-overlay">
     <div class="slider-table">
       <div class="slider-vm">
