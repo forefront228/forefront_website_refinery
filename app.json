@@ -1,6 +1,7 @@
 {
   "name": "forefront_website_refinery",
   "scripts": {
+    "postdeploy":"rake db:migrate"
   },
   "env": {
     "LANG": {
