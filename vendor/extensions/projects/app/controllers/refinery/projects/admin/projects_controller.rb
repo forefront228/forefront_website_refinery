@@ -4,8 +4,42 @@ module Refinery
       class ProjectsController < ::Refinery::AdminController
         before_filter :find_all_categories
 
+
         crudify :'refinery/projects/project',
-                :title_attribute => 'name'
+        :title_attribute => 'name'
+
+        def update
+          binding.pry
+          @project = Refinery::Projects::Project.find_by(id: params[:id])
+
+          @project.taggings.destroy_all
+
+          tags = params["tags"]["ids"]
+
+          tags.each do |id|
+            @project.taggings.create(tag_id: id.to_i, project_id: @project.id)
+          end
+
+          if @project.update_attributes(project_params)
+            flash.notice = t(
+            'refinery.crudify.updated',
+            :what => "#{@project.name}"
+            )
+            create_or_update_successful
+          else
+            create_or_update_unsuccessful 'edit'
+          end
+        end
+
+        def new
+          @project = Refinery::Projects::Project.new
+          @tags = Refinery::Tags::Tag.all
+        end
+
+        def edit
+          @project = Refinery::Projects::Project.find_by(id: params[:id])
+          @tags = Refinery::Tags::Tag.all
+        end
 
         def project_params
           params.require(:project).permit(permitted_project_params)
@@ -22,7 +56,7 @@ module Refinery
           @categories = Category.all
         end
 
-# Below was the initial file configuration. Changed for the purpose of implementing image collections for Project
+        # Below was the initial file configuration. Changed for the purpose of implementing image collections for Project
         # private
         #
         # # Only allow a trusted parameter "white list" through.
