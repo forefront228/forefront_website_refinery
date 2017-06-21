@@ -8,8 +8,19 @@ module Refinery
         crudify :'refinery/projects/project',
         :title_attribute => 'name'
 
+        def create
+          if Refinery::Projects::Project.create(project_params).valid?
+            flash.notice = t(
+            'refinery.crudify.created',
+            :what => "#{params["project"]["name"]}"
+            )
+            create_or_update_successful
+          else
+            create_or_update_unsuccessful 'new'
+          end
+        end
+
         def update
-          binding.pry
           @project = Refinery::Projects::Project.find_by(id: params[:id])
 
           @project.taggings.destroy_all
