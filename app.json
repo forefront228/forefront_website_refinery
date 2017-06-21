@@ -1,7 +1,7 @@
 {
   "name": "forefront_website_refinery",
   "scripts": {
-    "postdeploy": "pg:reset DATABASE; rake db:migrate; rake db:seed"
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "LANG": {
