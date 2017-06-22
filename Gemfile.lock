@@ -376,6 +376,7 @@ DEPENDENCIES
   dotenv-rails
   dragonfly-s3_data_store
   faker
+  fog-aws
   hirb
   jbuilder (~> 2.0)
   jquery-rails
