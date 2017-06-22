@@ -1,5 +1,5 @@
 <div id="preloader">
-<div id="preloader-inner"></div>
+  <div id="preloader-inner"></div>
 </div>
 <!--/preloader -->
 <!-- slider start-->
@@ -43,51 +43,40 @@
     <div>
       <!-- Nav tabs -->
       <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
-        <% @organizations.each do |organization| %>
-        <li role="presentation" class="nav-item"><a class="nav-link active" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
+        <% @organizations.each_with_index do |organization, index| %>
+        <% if index == 0 %>
+        <li role="presentation" class="nav-item active"><a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
+        <% else %>
+        <li role="presentation" class="nav-item"><a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
+        <% end %>
         <% end %>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="business">
-          <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-              <p class="lead">
-                FSE has a business philosophy that pursues technical excellence in structural engineering by developing and working with teams of people who recognize that the best projects are those that are refined through an organic process where each member listens and responds to the needs of the Client as well as the end user. At the end of the day, we sleep well knowing that we have contributed to the teams we join, and helped other people as well as ourselves grow professionally and personally.
-              </p>
-              <p class="lead">
-                Our goal is to do business well by teaming with a network of diverse clients who want to deliver the best solutions for each situation. It is through our work and personal team-mate relationships that we find opportunities to serve others. It is in our service that our business flourishes. As our business flourishes, we are enabled to help others grow in various ways.
-              </p>
+        <% @organizations.each_with_index do |organization, index| %>
+          <% if index == 0 %>
+            <div role="tabpanel" class="tab-pane active" id="<%= organization.tab_name %>">
+              <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                  <p class="lead">
+                    <%= organization.body.html_safe %>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane " id="culture">
-          <div class="col-md-8 offset-md-2 text-center">
-            <p class="lead">
-              “Forefront” refers to several intrinsic qualities of our firm. Our goal is to be at the forefront of our profession by setting the modern standard of structural engineering excellence. We accomplish this with new techniques and solutions guided by the context of history and experience. Our name also reflects our corporate and personal commitment to reach the world through our profession. Our work, our people, and our vision extend globally.
-            </p>
-            <p class="lead">
-              Every project begins with an idea, and every idea begins with a person. The summation of talented people and servant-leadership is the source of great collaboration. Our work is not about individuals, but rather teams comprised of unique individuals seeking one goal—developing the right solution for each problem. These solutions apply to our work, our lives, and the lives of those that we interact with.
-            </p>
-          </div>
-        </div><!--tab panel end-->
-        <div role="tabpanel" class="tab-pane " id="humanitarian">
-          <div class="col-md-8 offset-md-2 text-center">
-            <p class="lead">
-              At FSE we believe God has given us both the responsibility and joy of being mercy minded.   We think that our job as structural engineers is to be the best we possibly can, and to conduct business at the highest level as we work with people groups throughout the cities of our world.  The city is the heart of a state or province or country.  It is also the center of modern invention, construction, and innovation.  But it is the hearts of people that reflect their true needs.
-            </p>
-            <p class="lead quote">
-              “Everyone to whom much was given, of [them] much will be required.” (Luke 12:48 ESV).
-            </p>
-            <p class="lead quote">
-              “The eye cannot say to the hand, ‘I have no need of you,’ nor again the head to the feet, ‘I have no need of you.’  On the contrary, the parts of the body that seem to be weaker are indispensable, and on those parts of the body that we think less honorable we bestow the greater honor. . .If one member suffers, all suffer together, if one member is honored, all rejoice together.”  (1 Cor. 14:6 ESV)
-            </p>
-            <p class="lead">
-              25% of all FSE profits are invested in and contribute toward the development of sustainable, indigenous work in the cities of our world.  Not merely a donation that is eventually depleted, but intentional sustainability that helps provide job creation, shelter, and holistic growth.
-            </p>
-          </div>
-        </div><!--tab panel end-->
+          <% else %>
+            <div role="tabpanel" class="tab-pane" id="<%= organization.tab_name %>">
+              <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                  <p class="lead">
+                    <%= organization.body.html_safe %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div><!--tab content end-->
     </div>
   </div><!--container end-->
@@ -100,37 +89,37 @@
 </section>
 <!--modal of video-->
 <!-- <div class="modal video-modal fade" id="video-popup" tabindex="-1" role="dialog" aria-labelledby="video-popup">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-close"></span></button>
-      </div>
-      <div class="modal-body">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe id="vimeo-video" src="http://player.vimeo.com/video/57175742"></iframe>
-        </div>
-      </div> -->
-      <!--modal body-->
-    <!-- </div> -->
-    <!--modal content-->
-  <!-- </div> -->
-  <!--modal dialog-->
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-close"></span></button>
+</div>
+<div class="modal-body">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe id="vimeo-video" src="http://player.vimeo.com/video/57175742"></iframe>
+</div>
+</div> -->
+<!--modal body-->
+<!-- </div> -->
+<!--modal content-->
+<!-- </div> -->
+<!--modal dialog-->
 <!-- </div> -->
 <!--end the modal of video-->
 
 <script>
-  /////////////setting tabs height in organization section///////////////
-  var biggestHeight = 0;
-  // Loop through elements children to find & set the biggest height
-  $(".tab-pane *").each(function(){
-   // If this elements height is bigger than the biggestHeight
-   if ($(this).height() > biggestHeight ) {
-     // Set the biggestHeight to this Height
-     biggestHeight = $(this).height();
-   }
-  });
+/////////////setting tabs height in organization section///////////////
+var biggestHeight = 0;
+// Loop through elements children to find & set the biggest height
+$(".tab-pane *").each(function(){
+  // If this elements height is bigger than the biggestHeight
+  if ($(this).height() > biggestHeight ) {
+    // Set the biggestHeight to this Height
+    biggestHeight = $(this).height();
+  }
+});
 
-  // Set the container height
-  $(".tab-content").height(biggestHeight);
+// Set the container height
+$(".tab-content").height(biggestHeight);
 
 </script>

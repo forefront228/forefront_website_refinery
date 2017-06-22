@@ -12,8 +12,8 @@ module Refinery
     def home
       @projects = ::Refinery::Projects::Project.where(featured:true)
       @articles = ::Refinery::Articles::Article.order(created_at: :asc).limit(3)
-      render_with_templates?
       @organizations = Refinery::OrganizationTabs::OrganizationTab.all
+      render_with_templates?
     end
 
     def contact
