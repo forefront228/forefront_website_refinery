@@ -80,10 +80,12 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 #  gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
- gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
 
 gem 'refinerycms-projects', path: 'vendor/extensions'
 gem 'refinerycms-team_members', path: 'vendor/extensions'
 gem 'refinerycms-tags', path: 'vendor/extensions'
 
 gem 'refinerycms-articles', path: 'vendor/extensions'
+
+# refinerycms-page-images must be below gems that call on page-images (projects, team members, etc.)
+gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
