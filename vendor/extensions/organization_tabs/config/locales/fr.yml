@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Organization Tab
+            reorder: Réordonner les Organization Tabs
+            reorder_done: Fin de réordonnancement des Organization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Organization Tab. Cliquer sur "Créer un(e) nouve(au/l/lle) Organization Tab" pour créer votre premi(er/ère) organization tab.'
+          organization_tab:
+            view_live_html: Voir ce(t/tte) organization tab <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) organization tab
+            delete: Supprimer définitivement ce(t/tte) organization tab
+      organization_tabs:
+        show:
+          other: Autres Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

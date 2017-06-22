@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+#        article: masculino/femenino
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Crear nuevo organization tab
+            reorder: Reordenar organization tabs
+            reorder_done: Reordenación de organization tabs completada
+          records:
+            title: Organization Tabs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay organization tabs todavía. Pulsa en "Crear nuevo Organization Tab" para crear tu primer organization tab.
+          organization_tab:
+            view_live_html: Ver este organization tab como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este organization tab
+            delete: Borrar este organization tab para siempre
+      organization_tabs:
+        show:
+          other: Otros organization tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

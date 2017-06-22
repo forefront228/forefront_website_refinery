@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Add New Organization Tab
+            reorder: Reorder Organization Tabs
+            reorder_done: Done Reordering Organization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Organization Tabs yet. Click "Add New Organization Tab" to add your first organization tab.
+          organization_tab:
+            view_live_html: View this organization tab live <br/><em>(opens in a new window)</em>
+            edit: Edit this organization tab
+            delete: Remove this organization tab forever
+      organization_tabs:
+        show:
+          other: Other Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

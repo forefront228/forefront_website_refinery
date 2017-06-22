@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Lag en ny Organization Tab
+            reorder: Endre rekkefølgen på Organization Tabs
+            reorder_done: Ferdig å endre rekkefølgen Organization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Organization Tabs enda. Klikk på "Lag en ny Organization Tab" for å legge til din første organization tab.
+          organization_tab:
+            view_live_html: Vis hvordan denne organization tab ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne organization tab
+            delete: Fjern denne organization tab permanent
+      organization_tabs:
+        show:
+          other: Andre Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

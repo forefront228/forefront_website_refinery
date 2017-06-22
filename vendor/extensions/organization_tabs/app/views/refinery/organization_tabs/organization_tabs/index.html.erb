@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="organization_tabs">
+    <% @organization_tabs.each do |organization_tab| %>
+      <li>
+        <%= link_to organization_tab.tab_name, refinery.organization_tabs_organization_tab_path(organization_tab) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

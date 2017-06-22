@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613215615) do
+ActiveRecord::Schema.define(version: 20170622164619) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -118,6 +118,14 @@ ActiveRecord::Schema.define(version: 20170613215615) do
     t.datetime "updated_at"
     t.string   "image_title"
     t.string   "image_alt"
+  end
+
+  create_table "refinery_organization_tabs", force: :cascade do |t|
+    t.string   "tab_name"
+    t.text     "body"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "refinery_page_part_translations", force: :cascade do |t|
