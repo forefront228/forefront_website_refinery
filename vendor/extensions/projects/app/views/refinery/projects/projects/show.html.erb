@@ -43,6 +43,16 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="space-20"></div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2 project-show-tags">
+        <% @project.tags.each do |tag| %>
+        <a href="/tags/<%= tag.id %>" class="btn btn-sm btn-skin-border project-tags"><%= tag.name %></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
       <div class="space-20"></div>
       <div class="col-md-8 offset-md-2 ">
         <p><%= raw(@project.description) %></p>
@@ -54,38 +64,38 @@
 <section id="image-gallery" class="spacer">
   <div class="container">
     <div class="row">
-        <% @images.each_with_index do |image,i| %>
-          <div class="col-md-3 col-6 padding-override"> <!-- I don't understand why col-xs-6 doesn't work to define column size on mobile -->
-            <div class="gallery-thumbnail-wrapper">
-              <%= image_tag(image.url, onclick:"openModal();currentSlide(#{i+1})", class:"hover-shadow") %>
+      <% @images.each_with_index do |image,i| %>
+      <div class="col-md-3 col-6 padding-override"> <!-- I don't understand why col-xs-6 doesn't work to define column size on mobile -->
+        <div class="gallery-thumbnail-wrapper">
+          <%= image_tag(image.url, onclick:"openModal();currentSlide(#{i+1})", class:"hover-shadow") %>
+        </div>
+      </div>
+      <% end %>
+      <div id="myModal"class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+          <% @images.each do |image| %>
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <div class="modal-slide">
+              <%= image_tag(image.url) %>
             </div>
           </div>
-        <% end %>
-        <div id="myModal"class="modal">
-          <span class="close cursor" onclick="closeModal()">&times;</span>
-          <div class="modal-content">
-            <% @images.each do |image| %>
-              <div class="mySlides">
-                <div class="numbertext">1 / 4</div>
-                <div class="modal-slide">
-                  <%= image_tag(image.url) %>
-                </div>
+          <% end %>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <div class="row modal-thumbnails-wrapper">
+            <% @images.each_with_index do |image,i| %>
+            <div class="col-md-1 padding-override">
+              <div class="gallery-thumbnail-wrapper">
+                <%= image_tag(image.url,class:"demo",onclick:"currentSlide(#{i+1})") %>
               </div>
-            <% end %>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div class="row modal-thumbnails-wrapper">
-              <% @images.each_with_index do |image,i| %>
-              <div class="col-md-1 padding-override">
-                <div class="gallery-thumbnail-wrapper">
-                  <%= image_tag(image.url,class:"demo",onclick:"currentSlide(#{i+1})") %>
-                </div>
-                <!-- <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature"> -->
-              </div>
-              <% end %>
+              <!-- <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature"> -->
             </div>
+            <% end %>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
