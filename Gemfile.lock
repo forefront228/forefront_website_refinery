@@ -14,6 +14,9 @@ PATH
     refinerycms-articles (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.5)
+    refinerycms-organization_tabs (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 3.0.5)
     refinerycms-projects (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.5)
@@ -390,6 +393,7 @@ DEPENDENCIES
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.1)
   refinerycms-articles!
   refinerycms-authentication-devise (~> 1.0)
+  refinerycms-organization_tabs!
   refinerycms-page-images (~> 3.0.0)!
   refinerycms-projects!
   refinerycms-tags!

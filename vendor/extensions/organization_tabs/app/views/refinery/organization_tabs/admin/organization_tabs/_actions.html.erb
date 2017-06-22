@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::OrganizationTabs::Admin::OrganizationTabsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.organization_tabs_admin_organization_tabs_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_organization_tabs_admin_organization_tab_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::OrganizationTabs::Admin::OrganizationTabsController.sortable? && ::Refinery::OrganizationTabs::OrganizationTab.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.organization_tabs_admin_organization_tabs_path,
+                     t('.reorder', what:  "Organization Tabs"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.organization_tabs_admin_organization_tabs_path,
+                      t('.reorder_done', what: "Organization Tabs"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,30 @@
+<%= form_for [refinery, :organization_tabs_admin, @organization_tab] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @organization_tab,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :tab_name -%>
+    <%= f.text_field :tab_name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:body],
+                :object => "organization_tabs/organization_tab" -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.organization_tabs.admin.organization_tabs.organization_tab'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @organization_tab.tab_name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

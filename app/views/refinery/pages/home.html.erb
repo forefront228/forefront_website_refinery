@@ -43,9 +43,9 @@
     <div>
       <!-- Nav tabs -->
       <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
-        <li role="presentation" class="nav-item"><a class="nav-link active" href="#business" aria-controls="about-agency" role="tab" data-toggle="tab">Business</a></li>
-        <li role="presentation" class=" nav-item"><a class="nav-link" href="#culture" aria-controls="skills" role="tab" data-toggle="tab">Culture</a></li>
-        <li role="presentation" class=" nav-item"><a class="nav-link" href="#humanitarian" aria-controls="process" role="tab" data-toggle="tab">Humanitarian</a></li>
+        <% @organizations.each do |organization| %>
+        <li role="presentation" class="nav-item"><a class="nav-link active" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
+        <% end %>
       </ul>
 
       <!-- Tab panes -->

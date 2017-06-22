@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Přidat Organization Tab
+            reorder: Řadit Organization Tabs
+            reorder_done: Konec řazení Organization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Organization Tabs. Zvolte "Přidat Organization Tab" pro přidání prvního organization tab.
+          organization_tab:
+            view_live_html: Zobrazit náhled organization tab<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit organization tab
+            delete: Smazat organization tab
+      organization_tabs:
+        show:
+          other: Další Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

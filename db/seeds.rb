@@ -34,3 +34,6 @@ Refinery::TeamMembers::Engine.load_seed
 
 # Added by Refinery CMS Tags extension
 Refinery::Tags::Engine.load_seed
+
+# Added by Refinery CMS OrganizationTabs extension
+Refinery::OrganizationTabs::Engine.load_seed

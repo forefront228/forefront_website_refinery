@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @organization_tab.tab_name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Tab Name</h1>
+    <p>
+      <%=raw @organization_tab.tab_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Body</h1>
+    <p>
+      <%=raw @organization_tab.body %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="organization_tabs">
+      <% @organization_tabs.each do |organization_tab| %>
+        <li>
+          <%= link_to organization_tab.tab_name, refinery.organization_tabs_organization_tab_path(organization_tab) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

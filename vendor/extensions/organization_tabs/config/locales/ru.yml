@@ -1,0 +1,28 @@
+ru:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Добавить Organization Tab
+            reorder: Изменить порядок Organization Tabs
+            reorder_done: Закончить изменять порядок Organization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Organization Tabs" не найдено. Нажмите "Добавить Organization Tab" чтобы создать organization tab.
+          organization_tab:
+            view_live_html: Просмотреть organization tab вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать organization tab
+            delete: Удалить organization tab навсегда
+      organization_tabs:
+        show:
+          other: Другие Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body
