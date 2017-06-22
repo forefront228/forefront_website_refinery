@@ -18,6 +18,7 @@ group :production do
   gem 'rails_12factor'
   gem 'puma'
   gem 'dragonfly-s3_data_store'
+  gem 'fog-aws'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
