@@ -16,7 +16,8 @@ end
 user_data = [
   {username:"Logan", email:"l@l.com", password: "password"},
   {username:"Pavan", email:"p@p.com", password: "password"},
-  {username:"Arjun", email:"a@a.com", password: "password"}
+  {username:"Arjun", email:"a@a.com", password: "password"},
+  {username:"Forefront", email:"f@f.com", password: "password"}
 ]
 user_data.each { |u| Refinery::Authentication::Devise::User.new(u).create_first }
 
