@@ -1,0 +1,28 @@
+tr:
+  refinery:
+    plugins:
+      organization_tabs:
+        title: Organization Tabs
+    organization_tabs:
+      admin:
+        organization_tabs:
+          actions:
+            create_new: Yeni Ekle Organization Tab
+            reorder: Tekrar sirala Organization Tabs
+            reorder_done: Tekrar siralama tamamlandiOrganization Tabs
+          records:
+            title: Organization Tabs
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Organization Tabs yok henuz.  Tikla "Yeni Ekle Organization Tab" eklemek senin ilk organization tab.
+          organization_tab:
+            view_live_html: Bunu canlu organization tab goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle organization tab
+            delete: Bunu Sil organization tab sonsuza dek
+      organization_tabs:
+        show:
+          other: Diger Organization Tabs
+  activerecord:
+    attributes:
+      'refinery/organization_tabs/organization_tab':
+        tab_name: Tab Name
+        body: Body

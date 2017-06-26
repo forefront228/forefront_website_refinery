@@ -88,3 +88,5 @@ gem 'refinerycms-team_members', path: 'vendor/extensions'
 gem 'refinerycms-tags', path: 'vendor/extensions'
 
 gem 'refinerycms-articles', path: 'vendor/extensions'
+
+gem 'refinerycms-organization_tabs', path: 'vendor/extensions'
