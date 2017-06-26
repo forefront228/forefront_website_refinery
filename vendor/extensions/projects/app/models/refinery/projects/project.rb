@@ -3,6 +3,7 @@ module Refinery
     class Project < Refinery::Core::BaseModel
       self.table_name = 'refinery_projects'
 
+      after_save :add_featured_image_to_images
 
       validates :name, :presence => true, :uniqueness => true
       # validates :featured_image, :presence => true
@@ -15,6 +16,10 @@ module Refinery
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
       #   acts_as_indexed :fields => [:title]
+
+      def add_featured_image_to_images
+        self.images << self.featured_image unless self.images.include?(self.featured_image)
+      end
 
     end
   end
