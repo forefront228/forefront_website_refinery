@@ -3,7 +3,7 @@ module Refinery
     class Project < Refinery::Core::BaseModel
       self.table_name = 'refinery_projects'
 
-      after_save :add_featured_image_to_images
+      before_save :add_featured_image_to_images
 
       validates :name, :presence => true, :uniqueness => true
       # validates :featured_image, :presence => true
