@@ -74,7 +74,6 @@ GEM
       activerecord (>= 4.0.0, < 5)
     awesome_print (1.7.0)
     babosa (1.0.2)
-    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -95,13 +94,6 @@ GEM
     debug_inspector (0.0.3)
     decorators (2.0.2)
       railties (>= 4.0.0, < 5.1)
-    devise (3.5.10)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     diffy (3.1.0)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
@@ -207,7 +199,6 @@ GEM
     oga (2.10)
       ast
       ruby-ll (~> 2.1)
-    orm_adapter (0.5.0)
     pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -263,11 +254,6 @@ GEM
       acts_as_indexed (~> 0.8.0)
       decorators (~> 2.0.0)
       refinerycms-core (~> 3.0.0)
-    refinerycms-authentication-devise (1.0.4)
-      actionmailer (~> 4.2, >= 4.2.0)
-      devise (~> 3.0, >= 3.2.4)
-      friendly_id (~> 5.1.0)
-      refinerycms-core (~> 3.0, >= 3.0.0)
     refinerycms-core (3.0.5)
       actionpack (>= 4.2.3, < 5.0)
       activerecord (>= 4.2.3, < 5.0)
@@ -306,9 +292,6 @@ GEM
       refinerycms-core (= 3.0.5)
     refinerycms-wymeditor (1.1.0)
       refinerycms-core (>= 3.0.0, < 5.0)
-    responders (2.4.0)
-      actionpack (>= 4.2.0, < 5.3)
-      railties (>= 4.2.0, < 5.3)
     routing-filter (0.6.1)
       actionpack (>= 4.2, < 5.2)
       activesupport (>= 4.2, < 5.2)
@@ -358,8 +341,6 @@ GEM
       iso8601 (~> 0.9.1)
       net_http_timeout_errors (~> 0.3.0)
       oga (~> 2.7)
-    warden (1.2.7)
-      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -393,7 +374,6 @@ DEPENDENCIES
   refinerycms (~> 3.0)
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.1)
   refinerycms-articles!
-  refinerycms-authentication-devise (~> 1.0)
   refinerycms-organization_tabs!
   refinerycms-page-images (~> 3.0.0)!
   refinerycms-projects!
@@ -410,4 +390,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.3
+   1.15.1
