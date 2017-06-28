@@ -32,20 +32,23 @@ module Refinery
         def update
           @project = Refinery::Projects::Project.find_by(id: params[:id])
 
-          if @project.update_attributes(project_params)
-            @project.taggings.destroy_all
+          @project.assign_attributes(project_params)
+          if @project.valid?
             if params["tags"]
+              @project.taggings.destroy_all
               tags = params["tags"]["ids"]
               tags.each do |id|
-                @project.taggings.create(tag_id: id.to_i, project_id: @project.id)
+                @project.tags << Refinery::Tags::Tag.find(id)
               end
             end
+            @project.save
             flash.notice = t(
             'refinery.crudify.updated',
             :what => "#{@project.name}"
             )
             create_or_update_successful
           else
+            @tags = Refinery::Tags::Tag.all
             create_or_update_unsuccessful 'edit'
           end
         end
