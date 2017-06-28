@@ -2,29 +2,29 @@ module Refinery
   module Projects
     module Admin
       class ProjectsController < ::Refinery::AdminController
-        before_filter :find_all_categories
+        # before_filter :find_all_categories
 
 
         crudify :'refinery/projects/project',
         :title_attribute => 'name'
 
         def create
-
-          project = Refinery::Projects::Project.create(project_params)
-
-          if project.valid?
+          @project = Refinery::Projects::Project.new(project_params)
+          if @project.valid?
             if params["tags"]
               tags = params["tags"]["ids"]
               tags.each do |id|
-                project.taggings.create(tag_id: id.to_i, project_id: project.id)
+                @project.tags << Refinery::Tags::Tag.find(id)
               end
             end
+            @project.save
             flash.notice = t(
             'refinery.crudify.created',
             :what => "#{params["project"]["name"]}"
             )
             create_or_update_successful
           else
+            @tags = Refinery::Tags::Tag.all
             create_or_update_unsuccessful 'new'
           end
         end
@@ -32,20 +32,23 @@ module Refinery
         def update
           @project = Refinery::Projects::Project.find_by(id: params[:id])
 
-          if @project.update_attributes(project_params)
-            @project.taggings.destroy_all
+          @project.assign_attributes(project_params)
+          if @project.valid?
             if params["tags"]
+              @project.taggings.destroy_all
               tags = params["tags"]["ids"]
               tags.each do |id|
-                @project.taggings.create(tag_id: id.to_i, project_id: @project.id)
+                @project.tags << Refinery::Tags::Tag.find(id)
               end
             end
+            @project.save
             flash.notice = t(
             'refinery.crudify.updated',
             :what => "#{@project.name}"
             )
             create_or_update_successful
           else
+            @tags = Refinery::Tags::Tag.all
             create_or_update_unsuccessful 'edit'
           end
         end
@@ -66,14 +69,14 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def permitted_project_params
-          [:name, :description, :picture_id, :team_name, :location, :area, :completion_date, :featured, :category_id, :featured_image_id]
+          [:name, :description, :team_name, :location, :area, :completion_date, :featured, :featured_image_id]
         end
 
         protected
 
-        def find_all_categories
-          @categories = Category.all
-        end
+        # def find_all_categories
+        #   @categories = Category.all
+        # end
 
         # Below was the initial file configuration. Changed for the purpose of implementing image collections for Project
         # private
