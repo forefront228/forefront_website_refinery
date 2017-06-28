@@ -5,5 +5,5 @@ LinkedIn.configure do |config|
   # This must exactly match the redirect URI you set on your application's
   # settings page. If your redirect_uri is dynamic, pass it into
   # `auth_code_url` instead.
-  config.redirect_uri  = "http://localhost:3000/auth/linkedin/callback"
+  config.redirect_uri  = ENV["LINKEDIN_CALLBACK_URL"]
 end
