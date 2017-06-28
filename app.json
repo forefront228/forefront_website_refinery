@@ -31,6 +31,9 @@
     "LINKEDIN_SECRET": {
       "required": true
     },
+    "LINKEDIN_CALLBACK_URL": {
+      "required": true
+    },
     "S3_BUCKET": {
       "required": true
     },
