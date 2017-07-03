@@ -3,14 +3,8 @@
     <h2 id="tag-show-header">Showing Results For: </h2> <a href="/tags/<%= @tag.id %>" class="btn btn-lg btn-skin-border project-tags"><%= @tag.name %></a>
   </div>
 
-  <% @projects.each_with_index do |project, index| %>
-    <% if (index+1)%2!=0 %>
-      <div class="row">
-      <%= render partial: "stub", locals: { project: project} %>
-    <% else %>
-      <%= render partial: "stub", locals: { project: project} %>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="row">
+    <%= render partial: "refinery/projects/projects/stub", collection: @projects, as: :project%>
+  </div>
 
 </div>
