@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "~> 2.3.4"
+
 # generate thumbnails from linkedin data
 gem 'link_thumbnailer'
 # Handle environmental variables
