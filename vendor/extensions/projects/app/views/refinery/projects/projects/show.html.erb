@@ -19,11 +19,19 @@
 
 <section id="project">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <div class="spacer">
 
-        </div>
+    <div class="row">
+      <div class="space-20"></div>
+      <div class="col-md-8 offset-md-2 project-show-tags">
+        <% @project.tags.each do |tag| %>
+        <a href="/tags/<%= tag.id %>" class="btn btn-sm btn-skin-border project-tags"><%= tag.name %></a>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="space-20"></div>
+      <div class="col-md-8 offset-md-2" >
         <table class="table">
           <thead>
             <tr>
@@ -44,14 +52,7 @@
         </table>
       </div>
     </div>
-    <div class="space-20"></div>
-    <div class="row">
-      <div class="col-md-8 offset-md-2 project-show-tags">
-        <% @project.tags.each do |tag| %>
-        <a href="/tags/<%= tag.id %>" class="btn btn-sm btn-skin-border project-tags"><%= tag.name %></a>
-        <% end %>
-      </div>
-    </div>
+    
     <div class="row">
       <div class="space-20"></div>
       <div class="col-md-8 offset-md-2 ">
