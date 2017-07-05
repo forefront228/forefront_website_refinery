@@ -44,6 +44,9 @@ gem 'faker'
 # Manage Linkedin OAuth2
 gem "linkedin-oauth2", "~> 1.0"
 
+# For metrics
+gem 'skylight'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
