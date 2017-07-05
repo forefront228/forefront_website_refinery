@@ -2,8 +2,8 @@ module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
 
-    before_action :find_page, :set_canonical, except: :contact
-    before_action :error_404, unless: :current_user_can_view_page?, except: :contact
+    before_action :find_page, :set_canonical, except: [:contact, :about]
+    before_action :error_404, unless: :current_user_can_view_page?, except: [:contact, :about]
 
     # Save whole Page after delivery
     after_action :write_cache?
@@ -19,6 +19,10 @@ module Refinery
     def contact
       render "partials/_contact"
     end
+
+    def about
+      @organizations = Refinery::OrganizationTabs::OrganizationTab.all
+      render "partials/_about"
     end
 
     # This action can be accessed normally, or as nested pages.
