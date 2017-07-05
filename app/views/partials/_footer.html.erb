@@ -9,7 +9,8 @@
       </div>
       <div class="col-md-6 margin-b-30" align="center">
         <ul class="list-inline">
-          <li class="list-inline-item"><%= link_to "Home", refinery.root_path, data:{turbolinks:false} %>
+          <li class="list-inline-item"><%= link_to "Home", refinery.root_path, data:{turbolinks:false} %></li>
+          <li class="list-inline-item"><%= link_to "About", Rails.application.routes.url_helpers.about_path %></li>
           <li class="list-inline-item"><%= link_to "Projects", refinery.projects_projects_path %></li>
           <li class="list-inline-item"><%= link_to "News", refinery.articles_path %></li>
           <li class="list-inline-item"><%= link_to "Team", refinery.team_members_path %></li>
