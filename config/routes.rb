@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   get '/auth/linkedin/callback' => "refinery/articles/admin/articles#callback"
   get '/contact' => 'refinery/pages#contact'
+  get '/about' => 'refinery/pages#about'
   mount Refinery::Core::Engine, at: Refinery::Core.mounted_path
 
 
