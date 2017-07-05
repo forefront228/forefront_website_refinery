@@ -8,11 +8,11 @@
       <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
         <% @organizations.each_with_index do |organization, index| %>
           <% if index == 0 %>
-            <li role="presentation" class="nav-item">
+            <li class="nav-item" role="presentation">
               <a class="nav-link active" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
             </li>
           <% else %>
-            <li role="presentation" class="nav-item">
+            <li class="nav-item" role="presentation">
               <a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
             </li>
           <% end %>
@@ -23,7 +23,7 @@
       <div class="tab-content">
         <% @organizations.each_with_index do |organization, index| %>
         <% if index == 0 %>
-        <div role="tabpanel" class="tab-pane active" id="<%= organization.tab_name %>">
+        <div class="tab-pane active" id="<%= organization.tab_name %>" role="tabpanel">
           <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
               <p class="lead">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <% else %>
-        <div role="tabpanel" class="tab-pane" id="<%= organization.tab_name %>">
+        <div class="tab-pane" id="<%= organization.tab_name %>" role="tabpanel">
           <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
               <p class="lead">
