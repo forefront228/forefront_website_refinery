@@ -34,59 +34,12 @@
 
 <!-- news section end -->
 
-<section id="organization">
-  <div class="space-100"></div>
-  <div class="container">
-    <h2 class="center-title scrollReveal sr-bottom">Organization</h2>
-    <div class="center-border"></div>
-    <div class="space-40"></div>
-    <div>
-      <!-- Nav tabs -->
-      <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
-        <% @organizations.each_with_index do |organization, index| %>
-        <% if index == 0 %>
-        <li role="presentation" class="nav-item active"><a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
-        <% else %>
-        <li role="presentation" class="nav-item"><a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a></li>
-        <% end %>
-        <% end %>
-      </ul>
+<div class="space-100"></div>
+<%= render "partials/about" %>
 
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <% @organizations.each_with_index do |organization, index| %>
-          <% if index == 0 %>
-            <div role="tabpanel" class="tab-pane active" id="<%= organization.tab_name %>">
-              <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                  <p class="lead">
-                    <%= organization.body.html_safe %>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <% else %>
-            <div role="tabpanel" class="tab-pane" id="<%= organization.tab_name %>">
-              <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                  <p class="lead">
-                    <%= organization.body.html_safe %>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div><!--tab content end-->
-    </div>
-  </div><!--container end-->
-
-</section>
 <!--end about section-->
-<section id="contact" class="contact-section">
-  <div class="space-100"></div>
-  <%= render "partials/contact" %>
-</section>
+<div class="space-100"></div>
+<%= render "partials/contact" %>
 <!--modal of video-->
 <!-- <div class="modal video-modal fade" id="video-popup" tabindex="-1" role="dialog" aria-labelledby="video-popup">
 <div class="modal-dialog" role="document">
@@ -106,20 +59,3 @@
 <!--modal dialog-->
 <!-- </div> -->
 <!--end the modal of video-->
-
-<script>
-/////////////setting tabs height in organization section///////////////
-var biggestHeight = 0;
-// Loop through elements children to find & set the biggest height
-$(".tab-pane *").each(function(){
-  // If this elements height is bigger than the biggestHeight
-  if ($(this).height() > biggestHeight ) {
-    // Set the biggestHeight to this Height
-    biggestHeight = $(this).height();
-  }
-});
-
-// Set the container height
-$(".tab-content").height(biggestHeight);
-
-</script>
