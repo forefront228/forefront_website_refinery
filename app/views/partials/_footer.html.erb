@@ -9,11 +9,12 @@
       </div>
       <div class="col-md-6 margin-b-30" align="center">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="/">Home</a></li>
-          <li class="list-inline-item"><a href="/projects">Projects</a></li>
-          <li class="list-inline-item"><a href="/news">News</a></li>
-          <li class="list-inline-item"><a href="/team">Team</a></li>
-          <li class="list-inline-item"><a href="/contact">Contact</a></li>
+          <li class="list-inline-item"><%= link_to "Home", refinery.root_path, data:{turbolinks:false} %></li>
+          <li class="list-inline-item"><%= link_to "About", Rails.application.routes.url_helpers.about_path %></li>
+          <li class="list-inline-item"><%= link_to "Projects", refinery.projects_projects_path %></li>
+          <li class="list-inline-item"><%= link_to "News", refinery.articles_path %></li>
+          <li class="list-inline-item"><%= link_to "Team", refinery.team_members_path %></li>
+          <li class="list-inline-item"><%= link_to "Contact", Rails.application.routes.url_helpers.contact_path %></li>
         </ul>
       </div>
       <div class="col-md-6"></div>

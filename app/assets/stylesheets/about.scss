@@ -1,0 +1,14 @@
+.tab-content > .tab-pane {
+  display:block;
+  visibility:hidden;
+  position:absolute;
+}
+
+.tab-content > .active {
+  visibility:visible;
+  position: absolute;
+}
+
+// .tab-pane p {
+//   color:pink;
+// }
