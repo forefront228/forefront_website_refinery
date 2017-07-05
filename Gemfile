@@ -72,7 +72,7 @@ group :development do
   gem 'awesome_print'
 end
 
-
+gem 'tunemygc'
 # Refinery CMS
 gem 'refinerycms', '~> 3.0'
 
