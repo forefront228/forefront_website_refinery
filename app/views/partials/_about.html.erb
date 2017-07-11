@@ -28,7 +28,7 @@
           <% if index == 0 %>
             <div class="tab-pane active" id="<%= tab_name %>" role="tabpanel">
               <div class="row">
-                <div class="col-md-8 offset-md-2 organization-tab-content">
+                <div class="col-md-8 offset-md-2 organization-tab-content site-text-align">
                     <%= organization.body.html_safe %>
                 </div>
               </div>
@@ -36,7 +36,7 @@
             <% else %>
             <div class="tab-pane" id="<%= tab_name %>" role="tabpanel">
               <div class="row">
-                <div class="col-md-8 offset-md-2 organization-tab-content">
+                <div class="col-md-8 offset-md-2 organization-tab-content site-text-align">
                     <%= organization.body.html_safe %>
                 </div>
               </div>
