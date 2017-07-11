@@ -5,15 +5,17 @@
     <div class="space-40"></div>
     <div>
       <!-- Nav tabs -->
+      <%# binding.pry %>
       <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
         <% @organizations.each_with_index do |organization, index| %>
+          <% tab_name = organization.tab_name.gsub(/[^0-9a-z]/i, '') %>
           <% if index == 0 %>
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
+              <a class="nav-link active" href="#<%= tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
             </li>
           <% else %>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#<%= organization.tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
+              <a class="nav-link" href="#<%= tab_name %>" aria-controls="about-agency" role="tab" data-toggle="tab"><%= organization.tab_name %></a>
             </li>
           <% end %>
         <% end %>
@@ -22,27 +24,24 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <% @organizations.each_with_index do |organization, index| %>
-        <% if index == 0 %>
-        <div class="tab-pane active" id="<%= organization.tab_name %>" role="tabpanel">
-          <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-              <p class="lead">
-                <%= organization.body.html_safe %>
-              </p>
+          <% tab_name = organization.tab_name.gsub(/[^0-9a-z]/i, '') %>
+          <% if index == 0 %>
+            <div class="tab-pane active" id="<%= tab_name %>" role="tabpanel">
+              <div class="row">
+                <div class="col-md-8 offset-md-2 organization-tab-content site-text-align">
+                    <%= organization.body.html_safe %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <% else %>
-        <div class="tab-pane" id="<%= organization.tab_name %>" role="tabpanel">
-          <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-              <p class="lead">
-                <%= organization.body.html_safe %>
-              </p>
+            <% else %>
+            <div class="tab-pane" id="<%= tab_name %>" role="tabpanel">
+              <div class="row">
+                <div class="col-md-8 offset-md-2 organization-tab-content site-text-align">
+                    <%= organization.body.html_safe %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <% end %>
+          <% end %>
         <% end %>
       </div><!--tab content end-->
     </div>
