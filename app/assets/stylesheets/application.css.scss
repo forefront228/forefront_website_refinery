@@ -49,6 +49,13 @@
   font-weight: bold;
   font-style: italic;
 }
+
+.img-hero {
+  object-fit:cover;
+  width:100vw;
+  height:51vw;
+}
+
 .panel-body {
   position: relative;
   top: 50%;
