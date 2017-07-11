@@ -63,12 +63,11 @@
 }
 
 body {
-  padding-top: $content-margin-top;
   background-color: #F5F8FA;
 }
 
-.hero-banner {
-  margin-top: -1 * $content-margin-top;;
+.pad-from-navbar {
+  padding-top:$content-padding-top;
 }
 
 .text-overlay {
