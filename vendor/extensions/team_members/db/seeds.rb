@@ -30,15 +30,28 @@ a = Refinery::Image.create(image: File.new('app/assets/images/team-arjun.jpeg'))
 aa = Refinery::Image.create(image: File.new('app/assets/images/team-arjun2.jpeg'))
 l = Refinery::Image.create(image: File.new('app/assets/images/team-logan.jpg'))
 ll = Refinery::Image.create(image: File.new('app/assets/images/team-logan2.jpeg'))
-p = Refinery::Image.create(image: File.new('app/assets/images/team-pavan.jpeg'))
-pp = Refinery::Image.create(image: File.new('app/assets/images/team-pavan2.jpg'))
+pav = Refinery::Image.create(image: File.new('app/assets/images/team-pavan.jpeg'))
+pavpav = Refinery::Image.create(image: File.new('app/assets/images/team-pavan2.jpg'))
+
+def generate_bio
+  paragraphs=[]
+  sentences = []
+    rand(2..4).times {
+      rand(4..8).times do
+        sentences << Faker::Lorem.sentence(9,true,9)
+      end
+      paragraphs << sentences.join("")
+      sentences=[]
+    }
+  paragraphs.map { |p| "<p>" + p + "</p>"}.join("")
+end
 
 team_members = [
   {
     first_name: "Logan",
     last_name: "Price",
     role: "Developer",
-    bio: Faker::Lorem.paragraph,
+    bio:generate_bio,
     primary_image: l,
     secondary_image: ll
   },
@@ -46,15 +59,15 @@ team_members = [
     first_name:"Pavan",
     last_name:"Sarguru",
     role:"Developer",
-    bio: Faker::Lorem.paragraph,
-    primary_image: p,
-    secondary_image: pp
+    bio:generate_bio,
+    primary_image: pav,
+    secondary_image: pavpav
   },
   {
     first_name:"Arjun",
     last_name:"Venkataswamy",
     role:"Senior Developer",
-    bio: Faker::Lorem.paragraph,
+    bio:generate_bio,
     primary_image: a,
     secondary_image: aa
   }
