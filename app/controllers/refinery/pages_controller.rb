@@ -21,7 +21,7 @@ module Refinery
     end
 
     def about
-      @organizations = Refinery::OrganizationTabs::OrganizationTab.all
+      @organizations = Refinery::OrganizationTabs::OrganizationTab.all.order(:position)
       render "partials/_about"
     end
 
