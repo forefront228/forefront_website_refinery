@@ -1,0 +1,13 @@
+:output:
+    Refinery::TeamMembers::TeamMember:
+      :options:
+        # :fields:
+          # - id
+          # - first_name
+          # - last_name
+          # - role
+          # - bio
+          # - primary_image_id
+          # - secondary_image_id
+          # - position
+        # :description: false
