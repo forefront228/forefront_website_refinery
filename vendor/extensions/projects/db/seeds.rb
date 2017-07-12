@@ -147,3 +147,7 @@ fulton_project = Refinery::Projects::Project.create(fulton)
 # fulton_project.images.create(image:File.new('app/assets/images/1k-fulton.jpg'))
 # fulton_project.featured_image = Refinery::Image.find_by_image_name("1k-fulton.jpg")
 # fulton_project.save
+
+
+# Adding all other featured project images into neiu
+neiu_project.images << Refinery::Image.all[1..7]
