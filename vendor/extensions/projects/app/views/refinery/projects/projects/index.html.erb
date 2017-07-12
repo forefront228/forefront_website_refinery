@@ -4,23 +4,17 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         FILTER BY MARKET
       </button>
-      <button type="button" class="btn btn-primary" id="adaptive-toggle" aria-pressed="false" autocomplete="off">adaptive only</button>
-
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
         <% @dropdown_tags.each do |tag| %>
           <a class="dropdown-item" href="/tags/<%= tag.id %>"><%= tag.name %></a>
         <% end %>
       </div>
+      <button type="button" class="btn btn-primary" id="adaptive-toggle" aria-pressed="false" autocomplete="off">adaptive only</button>
     </div>
-
     <div class="spacer"></div>
-
     <div class="row">
       <%= render partial: "refinery/projects/projects/stub", collection: @projects, as: :project%>
     </div>
-
-
     <div class="spacer"></div>
   </div>
 </section>
