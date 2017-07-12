@@ -6,10 +6,12 @@ module Refinery
       before_action :find_page
 
       def index
-        # @featured_projects = Refinery::Projects::Project.where(featured:"true").order(created_at: :desc) #For some reason these instance variables get passed through but are empty
-        # @projects = Refinery::Projects::Project.where(featured:"false").order(created_at: :desc)
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @project in the line below:
+        @dropdown_tags = Refinery::Tags::Tag.where({ name: %w(Residential Commercial Hospitality Institutional Community Mixed-Use)})
+        @adaptive_tag = Refinery::Tags::Tag.find_by_name("Adaptive")
+        @projects = Refinery::Projects::Project.eager_load(:tags,:featured_image)
+
         present(@page)
       end
 

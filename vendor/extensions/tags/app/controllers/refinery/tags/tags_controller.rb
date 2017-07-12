@@ -12,8 +12,7 @@ module Refinery
       end
 
       def show
-        @tag = Tag.find(params[:id])
-        @projects = @tag.projects 
+        @tag = Refinery::Tags::Tag.eager_load(projects:[:featured_image,:tags]).where("refinery_tags.id = #{params[:id]}").first
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @tag in the line below:

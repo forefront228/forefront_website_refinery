@@ -53,3 +53,39 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 };
+
+// For filtering Adaptive on Project Index Page
+$( document ).ready(function() {
+  var animationSpeed = 100;
+  var stubs = $('.project-stub');
+  var nonAdaptiveStubs = $(".project-stub:not('.adaptive')");
+  var adaptiveStubs = $('.adaptive');
+
+  function toggleAdaptive() {
+    $('#adaptive-toggle').text(function(i, text){
+      return text === 'adaptive only' ? 'adaptive only √' : 'adaptive only';
+    });
+    $('#adaptive-toggle').toggleClass("active");
+
+    if ($('#adaptive-toggle').attr('aria-pressed')=="false") {
+      $('#adaptive-toggle').attr( 'aria-pressed', "true" );
+      $(stubs).stop().animate({left:-2000},animationSpeed,function(){
+        $(nonAdaptiveStubs).hide(0,function(){
+          $(adaptiveStubs).stop().animate({left:0},animationSpeed);
+        });
+      });
+    } else {
+      $('#adaptive-toggle').attr( 'aria-pressed', "false" );
+      $(adaptiveStubs).stop().animate({left:-2000},animationSpeed,function(){
+        $(nonAdaptiveStubs).show(0,function(){
+          $(stubs).stop().animate({left:0},animationSpeed);
+        });
+      });
+    };
+  };
+
+  $('#adaptive-toggle').click(function(event){
+    event.preventDefault();
+    toggleAdaptive();
+  })
+});
