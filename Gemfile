@@ -16,6 +16,7 @@ group :development do
   gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 # Use sqlite3 as the database for Active Record
