@@ -2,9 +2,9 @@ require 'dragonfly'
 
 module Refinery
   class Image < Refinery::Core::BaseModel
-    # translates :image_title, :image_alt
-    translates
-    
+    translates :image_title, :image_alt
+    # translates
+
     dragonfly_accessor :image, :app => :refinery_images
 
     include Images::Validators
