@@ -16,8 +16,10 @@ module Refinery
       end
 
       def show
-        @project = Project.find(params[:id])
-        @images = @project.images
+        # @project = Project.find(params[:id])
+        # @images = @project.images
+
+        @project = Project.eager_load(:featured_image,:images).where("refinery_projects.id = #{params[:id]}").first
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @project in the line below:
