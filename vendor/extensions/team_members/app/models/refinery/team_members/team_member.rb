@@ -10,15 +10,32 @@ module Refinery
       validates :first_name, presence: true, uniqueness: true
       validates :primary_image, :secondary_image, presence: true
 
+      before_validation :set_secondary_image, if: :secondary_image_nil?
+      before_save :add_primary_image_to_images, if: :primary_image_id_changed?
+      before_save :add_secondary_image_to_images, if: :secondary_image_id_changed?
+
+
+
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
       #   acts_as_indexed :fields => [:title]
 
       private
 
-      def set_default_images
-        self.primary_image ||= Refinery::Image.find_by_image_name('team1.png')
-        self.secondary_image ||= Refinery::Image.find_by_image_name('bg-1.jpg')
+      def add_primary_image_to_images
+        self.images << self.primary_image unless self.images.include?(self.primary_image)
+      end
+
+      def add_secondary_image_to_images
+        self.images << self.secondary_image unless self.images.include?(self.secondary_image)
+      end
+
+      def secondary_image_nil?
+        self.secondary_image.nil?
+      end
+
+      def set_secondary_image
+        self.secondary_image = self.primary_image
       end
 
     end
