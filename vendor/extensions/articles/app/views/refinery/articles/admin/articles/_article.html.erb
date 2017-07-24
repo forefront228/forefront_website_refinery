@@ -1,15 +1,16 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(article) -%>">
   <span class='title'>
-    <%= article.content %>
+          <b><%= Time.at(article.linkedin_timestamp.to_i/1000).strftime("%m/%d/%Y") %> - </b>
+          <%= article.content.truncate(65) %>
+          <span class='preview'></span>
+
+          <span class='actions'>
+            <%= action_icon(:preview, refinery.articles_path, t('.view_live_html')) %>
+            <%= action_icon(:edit,    refinery.edit_articles_admin_article_path(article), t('.edit') ) %>
+            <%= action_icon(:delete,  refinery.articles_admin_article_path(article), t('.delete'),
+            { class: "cancel confirm-delete",
+              data: {confirm: t('message',  scope: 'refinery.admin.delete', title: article.content)}}  ) %>
+          </span>
   </span>
 
-  <span class='preview'></span>
-
-  <span class='actions'>
-    <%= action_icon(:preview, refinery.articles_path, t('.view_live_html')) %>
-    <%= action_icon(:edit,    refinery.edit_articles_admin_article_path(article), t('.edit') ) %>
-    <%= action_icon(:delete,  refinery.articles_admin_article_path(article), t('.delete'),
-      { class: "cancel confirm-delete",
-        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: article.content)}}  ) %>
-  </span>
 </li>
