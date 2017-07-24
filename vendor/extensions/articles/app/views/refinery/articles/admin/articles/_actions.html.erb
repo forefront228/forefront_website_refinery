@@ -4,9 +4,7 @@
       <%= render '/refinery/admin/search', :url => refinery.articles_admin_articles_path %>
     </li>
   <% end %>
-  <li>
-    <%= action_label :add, refinery.new_articles_admin_article_path, t('.create_new') %>
-  </li>
+  
 <% if !searching? && ::Refinery::Articles::Admin::ArticlesController.sortable? && ::Refinery::Articles::Article.many? %>
   <li>
     <%= action_label :reorder,
