@@ -26,7 +26,7 @@
           <%= render partial: "stub", collection: @articles, as: :article%>
         </ul><!--service list end-->
         <div class="col-md-12 text-center">
-          <a href="/load_more_news" data-remote="true" data-params="article_position=<%= @articles.last.position %>" id="load-more-link" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
+          <a href="/load_more_news" data-remote="true" data-params="loaded_article_count=<%= @articles.count %>" id="load-more-link" class="btn btn-lg btn-skin-border btn-block margin-b-20">Load More</a>
         </div>
       </div>
     </div><!--row end-->

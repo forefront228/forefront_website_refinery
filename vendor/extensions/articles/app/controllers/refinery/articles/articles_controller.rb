@@ -21,8 +21,10 @@ module Refinery
 
       def load_more_news
         @num_of_new_articles = 3
-        @articles = Article.where("position > ?", params[:article_position]).order(:position).take(@num_of_new_articles)
-        puts @articles.inspect
+        @all_articles = Article.order(:position)[params[:loaded_article_count].to_i .. -1]
+        @last_article_id = @all_articles.last.id
+        @new_articles = @all_articles.take(@num_of_new_articles)
+        puts @new_articles.inspect
         respond_to do |format|
           format.html
           format.json { render json: @resource }

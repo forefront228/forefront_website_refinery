@@ -1,8 +1,9 @@
-<% @articles.each do |article| %>
+<% @new_articles.each do |article| %>
   $('#articles-list').append("<%= j(render('stub', article: article)) %>");
 <% end %>
-<% if @articles.last.position > params[:article_position].to_i + @num_of_new_articles - 1 %>
-  $('#load-more-link').data("params", "article_position=<%= @articles.last.position %>");
+<% if @new_articles.last.id != @last_article_id %>
+  var articleCount = "loaded_article_count=" + $('.news-item').length.toString()
+  $('#load-more-link').data("params", articleCount );
 <% else %>
   $('#load-more-link').hide();
 <% end %>
