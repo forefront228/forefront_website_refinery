@@ -13,10 +13,15 @@ module Refinery
       @projects = ::Refinery::Projects::Project.where(featured:true)
       @articles = ::Refinery::Articles::Article.order(position: :asc).limit(3)
       @organizations = Refinery::OrganizationTabs::OrganizationTab.all
+      @contact = Refinery::CustomPages::CustomPage.find_by_name("Contact")
+
+
       render_with_templates?
     end
 
     def contact
+      @contact = Refinery::CustomPages::CustomPage.find_by_name("Contact")
+
       render "partials/_contact"
     end
 
