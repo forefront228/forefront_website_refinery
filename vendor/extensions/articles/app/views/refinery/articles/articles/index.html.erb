@@ -2,12 +2,12 @@
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <img src="<%= "http://www.commonsenseleadership.com/wp-content/uploads/2015/11/bigstock-Group-of-Multiethnic-Busy-Peop-66058333.jpg" %>" width="100%" alt="" class="img-fluid img-hero">
+        <%= image_tag(@news.hero_image.url, class:"img-hero") %>
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
               <div class="container text-center text-overlay">
-                <h1>News</h1>
+                <h1><%= @news.hero_banner_text %></h1>
               </div>
             </div>
           </div>
