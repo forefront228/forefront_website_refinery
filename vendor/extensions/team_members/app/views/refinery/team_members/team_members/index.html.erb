@@ -2,12 +2,12 @@
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <img src="<%= "https://static.pexels.com/photos/7097/people-coffee-tea-meeting.jpg" %>" alt="" class="img-fluid img-hero">
+        <%= image_tag(@team.hero_image.url, class:"img-hero") %>
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
               <div class="container text-center text-overlay">
-                <h1>Our Team</h1>
+                <h1><%= @team.hero_banner_text %></h1>
               </div>
             </div>
           </div>
@@ -20,10 +20,13 @@
 <div class='space-80'></div>
 <div class='container'>
   <h1 class='text-center section-title'>
-    Where ideas are born
+    <%= @team.body_header %>
   </h1>
   <div class="row margin-b-40">
-    <div class="col-sm-6">
+    <div class="col-md-8 offset-md-2">
+      <%= @team.body.html_safe %>
+    </div>
+    <!-- <div class="col-sm-6">
       <p>
         But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
       </p>
@@ -32,7 +35,7 @@
       <p>
         But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
       </p>
-    </div>
+    </div> -->
   </div>
   <div class="row">
 

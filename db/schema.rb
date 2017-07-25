@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622164619) do
+ActiveRecord::Schema.define(version: 20170725193715) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +72,23 @@ ActiveRecord::Schema.define(version: 20170622164619) do
 
   add_index "refinery_authentication_devise_users", ["id"], name: "index_refinery_authentication_devise_users_on_id"
   add_index "refinery_authentication_devise_users", ["slug"], name: "index_refinery_authentication_devise_users_on_slug"
+
+  create_table "refinery_custom_pages", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "hero_image_id"
+    t.string   "hero_banner_text"
+    t.text     "body"
+    t.string   "body_header"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city_state_zip"
+    t.string   "phone_number"
+    t.string   "email_address"
+    t.text     "map_embed"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "refinery_image_page_translations", force: :cascade do |t|
     t.integer  "refinery_image_page_id", null: false

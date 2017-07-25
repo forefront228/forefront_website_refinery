@@ -1,0 +1,13 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(custom_page) -%>">
+  <span class='title'>
+    <%= custom_page.name %>
+  </span>
+
+  <span class='preview'></span>
+
+  <span class='actions'>
+    <% path = "/"+custom_page.name.downcase %>
+    <%= action_icon(:preview, path, t('.view_live_html')) %>
+    <%= action_icon(:edit,    refinery.edit_custom_pages_admin_custom_page_path(custom_page), t('.edit') ) %>
+  </span>
+</li>

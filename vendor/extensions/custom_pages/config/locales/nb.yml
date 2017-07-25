@@ -1,0 +1,37 @@
+nb:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Lag en ny Custom Page
+            reorder: Endre rekkefølgen på Custom Pages
+            reorder_done: Ferdig å endre rekkefølgen Custom Pages
+          records:
+            title: Custom Pages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Custom Pages enda. Klikk på "Lag en ny Custom Page" for å legge til din første custom page.
+          custom_page:
+            view_live_html: Vis hvordan denne custom page ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne custom page
+            delete: Fjern denne custom page permanent
+      custom_pages:
+        show:
+          other: Andre Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

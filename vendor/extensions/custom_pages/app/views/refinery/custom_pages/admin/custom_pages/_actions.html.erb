@@ -1,0 +1,10 @@
+<ul>
+  <% if ::Refinery::CustomPages::Admin::CustomPagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.custom_pages_admin_custom_pages_path %>
+    </li>
+  <% end %>
+</ul>
+<div>
+  <p>Customize image banners, content, contact information, etc. on <b>Contact, Team,</b> and <b>News</b> pages</p>
+</div>

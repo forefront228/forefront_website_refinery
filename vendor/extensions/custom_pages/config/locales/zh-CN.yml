@@ -1,0 +1,39 @@
+zh-CN:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: 建立新的 Custom Page
+            reorder: 对 Custom Pages 重新排序
+            reorder_done: 对 Custom Pages 的重新排序结束
+          records:
+            title: Custom Pages
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Custom Pages yet. Click "Add New Custom Page" to add your first custom page.
+            no_items_yet: 目前没有 Custom Pages . 点击 "Add New Custom Page" 创建一个custom page.
+          custom_page:
+            view_live_html: 查看 custom page 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 custom page
+            delete: 永久删除 custom page
+      custom_pages:
+        show:
+          other: 其他 Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed
