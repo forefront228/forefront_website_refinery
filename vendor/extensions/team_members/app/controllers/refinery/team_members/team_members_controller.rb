@@ -8,6 +8,7 @@ module Refinery
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @team_member in the line below:
+        @team = Refinery::CustomPages::CustomPage.find_by_name("Team")
         present(@page)
       end
 
