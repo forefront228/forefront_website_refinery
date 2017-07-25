@@ -1,0 +1,37 @@
+tr:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Yeni Ekle Custom Page
+            reorder: Tekrar sirala Custom Pages
+            reorder_done: Tekrar siralama tamamlandiCustom Pages
+          records:
+            title: Custom Pages
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Custom Pages yok henuz.  Tikla "Yeni Ekle Custom Page" eklemek senin ilk custom page.
+          custom_page:
+            view_live_html: Bunu canlu custom page goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle custom page
+            delete: Bunu Sil custom page sonsuza dek
+      custom_pages:
+        show:
+          other: Diger Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

@@ -1,0 +1,37 @@
+ru:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Добавить Custom Page
+            reorder: Изменить порядок Custom Pages
+            reorder_done: Закончить изменять порядок Custom Pages
+          records:
+            title: Custom Pages
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Custom Pages" не найдено. Нажмите "Добавить Custom Page" чтобы создать custom page.
+          custom_page:
+            view_live_html: Просмотреть custom page вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать custom page
+            delete: Удалить custom page навсегда
+      custom_pages:
+        show:
+          other: Другие Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

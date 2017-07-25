@@ -1,0 +1,74 @@
+<%= form_for [refinery, :custom_pages_admin, @custom_page] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @custom_page,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :hero_image -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :hero_image_id,
+               :image => @custom_page.hero_image,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :hero_banner_text -%>
+    <%= f.text_field :hero_banner_text -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:body, :map_embed],
+                :object => "custom_pages/custom_page" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :body_header -%>
+    <%= f.text_field :body_header -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :address_line_1 -%>
+    <%= f.text_field :address_line_1 -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :address_line_2 -%>
+    <%= f.text_field :address_line_2 -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :city_state_zip -%>
+    <%= f.text_field :city_state_zip -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :phone_number -%>
+    <%= f.text_field :phone_number -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :email_address -%>
+    <%= f.text_field :email_address -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.custom_pages.admin.custom_pages.custom_page'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @custom_page.name) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

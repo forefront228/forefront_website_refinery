@@ -1,0 +1,37 @@
+it:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Aggiungi Nuovo Custom Page
+            reorder: Riordina Custom Pages
+            reorder_done: Termina il Riordino di Custom Pages
+          records:
+            title: Custom Pages
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Custom Pages. Clicca "Aggiungi Nuovo Custom Page" per aggiungere il tuo primo custom page.
+          custom_page:
+            view_live_html: Guarda live questo custom page <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo custom page
+            delete: Rimuovi per sempre questo custom page
+      custom_pages:
+        show:
+          other: Altri Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

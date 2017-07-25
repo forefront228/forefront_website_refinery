@@ -1,0 +1,87 @@
+<% content_for :body_content_title do %>
+  <%= @custom_page.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @custom_page.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Hero Image</h1>
+    <p>
+      <%= image_fu @custom_page.hero_image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Hero Banner Text</h1>
+    <p>
+      <%=raw @custom_page.hero_banner_text %>
+    </p>
+  </section>
+  <section>
+    <h1>Body</h1>
+    <p>
+      <%=raw @custom_page.body %>
+    </p>
+  </section>
+  <section>
+    <h1>Body Header</h1>
+    <p>
+      <%=raw @custom_page.body_header %>
+    </p>
+  </section>
+  <section>
+    <h1>Address Line 1</h1>
+    <p>
+      <%=raw @custom_page.address_line_1 %>
+    </p>
+  </section>
+  <section>
+    <h1>Address Line 2</h1>
+    <p>
+      <%=raw @custom_page.address_line_2 %>
+    </p>
+  </section>
+  <section>
+    <h1>City State Zip</h1>
+    <p>
+      <%=raw @custom_page.city_state_zip %>
+    </p>
+  </section>
+  <section>
+    <h1>Phone Number</h1>
+    <p>
+      <%=raw @custom_page.phone_number %>
+    </p>
+  </section>
+  <section>
+    <h1>Email Address</h1>
+    <p>
+      <%=raw @custom_page.email_address %>
+    </p>
+  </section>
+  <section>
+    <h1>Map Embed</h1>
+    <p>
+      <%=raw @custom_page.map_embed %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="custom_pages">
+      <% @custom_pages.each do |custom_page| %>
+        <li>
+          <%= link_to custom_page.name, refinery.custom_pages_custom_page_path(custom_page) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

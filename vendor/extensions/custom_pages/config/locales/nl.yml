@@ -1,0 +1,37 @@
+nl:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Nieuwe Custom Page toevoegen
+            reorder: De volgorde van de Custom Pages wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Custom Page-volgorde
+          records:
+            title: Custom Pages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Custom Pages. Druk op 'Nieuwe Custom Page toevoegen' om de eerste toe te voegen.
+          custom_page:
+            view_live_html: Deze custom page op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze custom page
+            delete: Deze custom page definitief verwijderen
+      custom_pages:
+        show:
+          other: Andere Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

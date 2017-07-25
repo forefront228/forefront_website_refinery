@@ -1,0 +1,37 @@
+cs:
+  refinery:
+    plugins:
+      custom_pages:
+        title: Custom Pages
+    custom_pages:
+      admin:
+        custom_pages:
+          actions:
+            create_new: Přidat Custom Page
+            reorder: Řadit Custom Pages
+            reorder_done: Konec řazení Custom Pages
+          records:
+            title: Custom Pages
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Custom Pages. Zvolte "Přidat Custom Page" pro přidání prvního custom page.
+          custom_page:
+            view_live_html: Zobrazit náhled custom page<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit custom page
+            delete: Smazat custom page
+      custom_pages:
+        show:
+          other: Další Custom Pages
+  activerecord:
+    attributes:
+      'refinery/custom_pages/custom_page':
+        name: Name
+        hero_image: Hero Image
+        hero_banner_text: Hero Banner Text
+        body: Body
+        body_header: Body Header
+        address_line_1: Address Line 1
+        address_line_2: Address Line 2
+        city_state_zip: City State Zip
+        phone_number: Phone Number
+        email_address: Email Address
+        map_embed: Map Embed

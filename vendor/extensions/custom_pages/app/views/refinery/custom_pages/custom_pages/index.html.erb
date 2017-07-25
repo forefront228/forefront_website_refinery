@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="custom_pages">
+    <% @custom_pages.each do |custom_page| %>
+      <li>
+        <%= link_to custom_page.name, refinery.custom_pages_custom_page_path(custom_page) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

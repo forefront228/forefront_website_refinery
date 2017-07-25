@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::CustomPages::Admin::CustomPagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.custom_pages_admin_custom_pages_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_custom_pages_admin_custom_page_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::CustomPages::Admin::CustomPagesController.sortable? && ::Refinery::CustomPages::CustomPage.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.custom_pages_admin_custom_pages_path,
+                     t('.reorder', what:  "Custom Pages"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.custom_pages_admin_custom_pages_path,
+                      t('.reorder_done', what: "Custom Pages"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>
