@@ -6,10 +6,8 @@
   <span class='preview'></span>
 
   <span class='actions'>
-    <%= action_icon(:preview, refinery.custom_pages_custom_page_path(custom_page), t('.view_live_html')) %>
+    <% path = "/"+custom_page.name.downcase %>
+    <%= action_icon(:preview, path, t('.view_live_html')) %>
     <%= action_icon(:edit,    refinery.edit_custom_pages_admin_custom_page_path(custom_page), t('.edit') ) %>
-    <%= action_icon(:delete,  refinery.custom_pages_admin_custom_page_path(custom_page), t('.delete'),
-      { class: "cancel confirm-delete",
-        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: custom_page.name)}}  ) %>
   </span>
 </li>
