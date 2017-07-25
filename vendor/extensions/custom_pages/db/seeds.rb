@@ -27,7 +27,8 @@ pages = [
     address_line_1: "Forefront Structural Engineers",
     address_line_2: "228 S Wabash Ave #300",
     city_state_zip: "Chicago, IL 60604",
-    email_address: "info@forefrontstructural.com"
+    email_address: "info@forefrontstructural.com",
+    map_embed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.659735433162!2d-87.6285748849054!3d41.87866677335837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca3085e35a3%3A0xff354344f728f4fc!2sForefront+Structural+Engineer+Inc!5e0!3m2!1sen!2sus!4v1493580701752" frameborder="0" style="width: 100%; height: 400px;"></iframe>'
   },
 
   {
