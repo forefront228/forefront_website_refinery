@@ -1,0 +1,27 @@
+<% if menu_item.title == "Custom Pages" %>
+  <%= link_to "Contact - News - Team", refinery.url_for(menu_item.url),
+  :class => ("active" if menu_item.highlighted?(params)),
+  :id => "plugin_#{menu_item.name}" %>
+
+<% elsif menu_item.title == "Organization Tabs" %>
+  <%= link_to "About", refinery.url_for(menu_item.url),
+  :class => ("active" if menu_item.highlighted?(params)),
+  :id => "plugin_#{menu_item.name}" %>
+
+<% elsif menu_item.title == "Articles" %>
+  <%= link_to "News", refinery.url_for(menu_item.url),
+  :class => ("active" if menu_item.highlighted?(params)),
+  :id => "plugin_#{menu_item.name}" %>
+
+<% elsif menu_item.title == "Team Members" %>
+  <%= link_to "Team", refinery.url_for(menu_item.url),
+  :class => ("active" if menu_item.highlighted?(params)),
+  :id => "plugin_#{menu_item.name}" %>
+
+<% elsif menu_item.title == "Pages" %>
+
+<% else %>
+  <%= link_to menu_item.title, refinery.url_for(menu_item.url),
+              :class => ("active" if menu_item.highlighted?(params)),
+              :id => "plugin_#{menu_item.name}" %>
+<% end %>
