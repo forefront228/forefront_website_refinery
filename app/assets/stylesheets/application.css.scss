@@ -82,3 +82,10 @@ body {
 .site-text-align {
   text-align: justify;
 }
+
+@media screen and (max-device-width: 600px) {
+  /* some CSS here */
+  #page {
+    padding-top:51px;
+  }
+}
