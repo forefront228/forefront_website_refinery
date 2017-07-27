@@ -3,13 +3,14 @@ module Refinery
     class TeamMembersController < ::ApplicationController
 
       before_action :find_all_team_members
-      before_action :find_page
+      # before_action :find_page
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @team_member in the line below:
         @team = Refinery::CustomPages::CustomPage.find_by_name("Team")
-        present(@page)
+        @team_members = TeamMember.includes(:primary_image)
+        # present(@page)
       end
 
       def show
@@ -17,7 +18,7 @@ module Refinery
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @team_member in the line below:
-        present(@page)
+        # present(@page)
       end
 
     protected

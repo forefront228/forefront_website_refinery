@@ -2,7 +2,7 @@ module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
 
-    before_action :find_page, :set_canonical, except: [:contact, :about]
+    # before_action :find_page, :set_canonical, except: [:contact, :about]
     before_action :error_404, unless: :current_user_can_view_page?, except: [:contact, :about]
 
     # Save whole Page after delivery
@@ -10,7 +10,7 @@ module Refinery
 
     # This action is usually accessed with the root path, normally '/'
     def home
-      @projects = ::Refinery::Projects::Project.where(featured:true)
+      @projects = ::Refinery::Projects::Project.includes(:featured_image).where(featured:true)
       @articles = ::Refinery::Articles::Article.order(position: :asc).limit(3)
       @organizations = Refinery::OrganizationTabs::OrganizationTab.all
       @contact = Refinery::CustomPages::CustomPage.find_by_name("Contact")
