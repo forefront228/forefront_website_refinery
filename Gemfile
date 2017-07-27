@@ -17,6 +17,8 @@ group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry'
+  gem 'bullet'
+  gem "slack-notifier"
 end
 
 # Use sqlite3 as the database for Active Record

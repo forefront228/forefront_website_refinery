@@ -52,4 +52,26 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = false
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.growl = false
+    # Bullet.xmpp = { :account  => 'bullets_account@jabber.org',
+                    # :password => 'bullets_password_for_jabber',
+                    # :receiver => 'your_account@jabber.org',
+                    # :show_online_status => true }
+    Bullet.rails_logger = true
+    Bullet.honeybadger = false
+    Bullet.bugsnag = false
+    Bullet.airbrake = false
+    Bullet.rollbar = false
+    Bullet.add_footer = false
+    Bullet.stacktrace_includes = [ 'refinerycms-page-images', 'refinerycms-projects', 'refinerycms-team_members', 'refinerycms-tags', 'refinerycms-articles', 'refinerycms-organization_tabs', 'refinerycms-custom_pages' ]
+    # Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware' ]
+    Bullet.slack = { webhook_url: 'https://hooks.slack.com/services/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', channel: '#bullet', username: 'notifier' }
+  end
+
 end
