@@ -2,12 +2,6 @@
   border-radius: 0;
 }
 
-// .navbar-brand img {
-//   display: inline-block;
-// }
-
-// navbar-text navbar-logo my-vertical-align
-
 .nav-logo {
   // height: 40px; // A. Font and logo same height. Biggest possible. Too big on mobile.
   height: 30px; // B. Font and logo same height. Smaller. Good size for destop and mobile
@@ -28,10 +22,25 @@
   color: white;
 }
 
-#navbar-container {
-  height: 48px;
-  line-height: 48px;
-  text-align: left;
+@media (max-device-width: 767px) {
+  /* some CSS here */
+  #navbar-container {
+    padding-top:48px; //sets navbar height
+    text-align: left;
+  }
+}
+
+@media (min-device-width: 768px) {
+  /* some CSS here */
+  #navbar-container {
+    height:48px; //sets navbar height
+    text-align: left;
+  }
+}
+
+#menu-hamburger {
+  // padding: 0px;
+  top:4px !important;
 }
 
 #logo-icon {
