@@ -1,13 +1,29 @@
-<li>
-  <%= image_tag(project.featured_image.url, class:"img-hero") %>
-  <div class="slider-overlay">
-    <div class="slider-table">
-      <div class="slider-vm">
-        <div class="container text-center project-heading text-overlay">
-          <h1><%=project.name%></h1>
-          <a href="<%=projects_project_path(project)%>" class="btn btn-lg btn-white-border">See More</a>
+<% if project == @projects.first %>
+  <li>
+    <%= image_tag(project.featured_image.url, class:"img-hero flex-active-slide") %>
+    <div class="slider-overlay">
+      <div class="slider-table">
+        <div class="slider-vm">
+          <div class="container text-center project-heading text-overlay">
+            <h1><%=project.name%></h1>
+            <a href="<%=projects_project_path(project)%>" class="btn btn-lg btn-white-border">See More</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div><!--slider overlay end-->
-</li>
+    </div><!--slider overlay end-->
+  </li>
+<% else %>
+  <li class="initially-hidden">
+    <%= image_tag(project.featured_image.url, class:"img-hero") %>
+    <div class="slider-overlay">
+      <div class="slider-table">
+        <div class="slider-vm">
+          <div class="container text-center project-heading text-overlay">
+            <h1><%=project.name%></h1>
+            <a href="<%=projects_project_path(project)%>" class="btn btn-lg btn-white-border">See More</a>
+          </div>
+        </div>
+      </div>
+    </div><!--slider overlay end-->
+  </li>
+<% end %>

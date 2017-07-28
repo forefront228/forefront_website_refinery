@@ -14,15 +14,9 @@
    margin-bottom: 15px;
  }
 
- // .project-index-img {
- //   display: block;
- //   margin: auto;
- //   width: 98%;
- //   margin-top: 25px;
- //   -webkit-transition: all 0.5s ease;
- //   -moz-transition: all 0.5s ease;
- //   -o-transition: all 0.5s ease;
- // }
+ .initially-hidden {
+   display:none;
+ }
 
  .project-index-img:hover {
    width: 100%;
