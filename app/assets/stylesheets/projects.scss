@@ -1,6 +1,14 @@
 .project-heading {
-  padding-top: 2em;
-  padding-bottom: 3em;
+  padding: 2em 35px 2em 35px;
+}
+
+@media (max-device-width: 767px) {
+  /* some CSS here */
+  #see-more-button {
+    font-size:.75rem;
+    padding:3px 5px 3px 5px;
+    border-width:1px;
+  }
 }
 
  .project-tags {
