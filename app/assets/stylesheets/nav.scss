@@ -2,17 +2,61 @@
   border-radius: 0;
 }
 
-.navbar-brand img {
-  display: inline-block;
+// .navbar-brand img {
+//   display: inline-block;
+// }
+
+// navbar-text navbar-logo my-vertical-align
+
+.nav-logo {
+  // height: 40px; // A. Font and logo same height. Biggest possible. Too big on mobile.
+  height: 30px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+}
+
+.nav-logo img{
+  height: 100%
+}
+
+.navbar-text {
+  font-family: "Tex Gyre Adventor";
+  font-weight: bold;
+  // font-size: 54px; // A. Font and logo same height. Biggest possible. Too big on mobile.
+  font-size: 40px; // B. Font and logo same height. Smaller. Good size for destop and mobile
 }
 
 .navbar-text.navbar-logo {
-  font-family: "Tex Gyre Adventor";
-  font-weight: bold;
-  font-size: 28px;
   color: white;
-  padding-top: .3rem;
 }
+
+#navbar-container {
+  height: 48px;
+  line-height: 48px;
+  text-align: left;
+}
+
+#logo-icon {
+  display: inline-block !important;
+  vertical-align: middle;
+  line-height: normal;
+  white-space: nowrap;
+  position:absolute;
+  // top:-23px; // A. Font and logo same height. Biggest possible. Too big on mobile.
+  top:-10px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+}
+
+#logo-text {
+  display: inline;
+  // vertical-align: -16px; // A. Font and logo same height. Biggest. Too big on mobile.
+  vertical-align: -11px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+  line-height: normal;
+}
+
+.my-vertical-align {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
 
 // (41,43,44)
 .transparent-nav.bg-inverse {
@@ -52,11 +96,6 @@
   border-bottom: 1px solid #ddd;
 }
 
-.transparent-nav.bg-inverse.secondary-page {
-  background-color: rgba(41,43,44, 0.5) !important;
-}
-
-.nav-logo {
-  display: inline;
-  height: 25px;
-}
+// .transparent-nav.bg-inverse.secondary-page {
+//   background-color: rgba(41,43,44, 0.5) !important;
+// }
