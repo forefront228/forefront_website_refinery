@@ -14,7 +14,8 @@ module Refinery
       end
 
       def show
-        @team_member = TeamMember.find(params[:id])
+        @team_member = TeamMember.find_by_id(params[:id])
+        redirect_to refinery.team_members_path unless @team_member
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @team_member in the line below:
