@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :tags do
-    resources :tags, :path => '', :only => [:index, :show]
+    resources :tags, :path => '', :only => [:show]
   end
 
   # Admin routes
