@@ -18,6 +18,8 @@ Refinery::I18n.frontend_locales.each do |lang|
   end if defined?(Refinery::Page)
 end
 
+Refinery::OrganizationTabs::OrganizationTab.destroy_all
+
 Refinery::OrganizationTabs::OrganizationTab.create(tab_name: "BUSINESS", body: "<p>FSE has a business philosophy that pursues technical excellence in structural engineering by developing and working with teams of people who recognize that the best projects are those that are refined through an organic process where each member listens and responds to the needs of the Client as well as the end user. At the end of the day, we sleep well knowing that we have contributed to the teams we join, and helped other people as well as ourselves grow professionally and personally.</p>
 
 <p>Our goal is to do business well by teaming with a network of diverse clients who want to deliver the best solutions for each situation. It is through our work and personal team-mate relationships that we find opportunities to serve others. It is in our service that our business flourishes. As our business flourishes, we are enabled to help others grow in various ways.</p>")
