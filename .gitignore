@@ -100,3 +100,5 @@ vendor/extensions/**/spec/dummy
 
 config/skylight.yml
 .byebug_history
+computed_styles_broken.scss
+computed_styles_working.scss
