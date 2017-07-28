@@ -1,13 +1,19 @@
-<li>
-  <%= image_tag(project.featured_image.url, class:"img-hero") %>
-  <div class="slider-overlay">
-    <div class="slider-table">
-      <div class="slider-vm">
-        <div class="container text-center project-heading text-overlay">
-          <h1><%=project.name%></h1>
-          <a href="<%=projects_project_path(project)%>" class="btn btn-lg btn-white-border">See More</a>
+<% if project == @projects.first %>
+  <li>
+<% else %>
+  <li class="initially-hidden">
+<% end %>
+    <%= image_tag(project.featured_image.url, class:"img-hero") %>
+    <div class="slider-overlay">
+      <div class="slider-table">
+        <div class="slider-vm">
+          <a href="<%=projects_project_path(project)%>" >
+            <div class="container text-center project-heading text-overlay">
+              <h1 style="margin-bottom:0px"><%=project.name%></h1>
+              <span id="see-more-button" class="btn btn-lg btn-white-border" style="display:inline-block !important">See More</span>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </div><!--slider overlay end-->
-</li>
+    </div><!--slider overlay end-->
+  </li>

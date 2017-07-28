@@ -13,6 +13,7 @@ module Refinery
 
       def show
         @tag = Refinery::Tags::Tag.eager_load(projects:[:featured_image,:tags]).where("refinery_tags.id = #{params[:id]}").first
+        redirect_to refinery.projects_projects_path unless @tag
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @tag in the line below:
