@@ -2,7 +2,7 @@ module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
 
-    # before_action :find_page, :set_canonical, except: [:contact, :about]
+    before_action :find_page, :set_canonical, except: [:contact, :about]
     before_action :error_404, unless: :current_user_can_view_page?, except: [:contact, :about]
 
     # Save whole Page after delivery
