@@ -66,9 +66,14 @@ body {
   background-color: #F5F8FA;
 }
 
-.pad-from-navbar {
-  padding-top:$content-padding-top;
+@media screen and (min-device-width: 768px) {
+  /* some CSS here */
+  .pad-from-navbar {
+    padding-top:$content-padding-top;
+  }
+
 }
+
 
 .text-overlay {
   width:100vw;
@@ -86,6 +91,12 @@ body {
 @media screen and (max-device-width: 767px) {
   /* some CSS here */
   #page {
-    padding-top:58px;
+    padding-top: $mobile-padding-top;
+  }
+}
+@media screen and (max-device-width: 767px) {
+  /* some CSS here */
+  .pad-from-navbar {
+    padding-top: $no-hero-image-padding;
   }
 }
