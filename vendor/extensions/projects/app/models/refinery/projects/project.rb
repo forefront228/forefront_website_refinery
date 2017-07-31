@@ -3,6 +3,7 @@ module Refinery
     class Project < Refinery::Core::BaseModel
       self.table_name = 'refinery_projects'
 
+      before_save :assign_position
       after_save :add_featured_image_to_images
 
       validates :name, :presence => true, :uniqueness => true
@@ -19,6 +20,10 @@ module Refinery
 
       def add_featured_image_to_images
         self.images << self.featured_image unless self.images.include?(self.featured_image)
+      end
+
+      def assign_position
+        self.position = Project.count + 1 if self.position == nil
       end
 
     end
