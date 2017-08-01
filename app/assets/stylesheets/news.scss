@@ -1,5 +1,13 @@
 @import 'variables';
 
+@media (max-width: 767px){
+  .news-item {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+
 .news-panel {
   background-color: #333333;
   height: 100px;

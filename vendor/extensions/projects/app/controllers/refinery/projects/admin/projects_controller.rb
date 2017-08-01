@@ -8,6 +8,13 @@ module Refinery
         crudify :'refinery/projects/project',
         :title_attribute => 'name'
 
+        def index
+          search_all_projects if searching?
+          # paginate_all_projects
+          @projects = Project.all.order(:position)
+          render_partial_response?
+        end
+
         def create
           @project = Refinery::Projects::Project.new(project_params)
           @project.assign_attributes(position:Project.last.position + 1)
