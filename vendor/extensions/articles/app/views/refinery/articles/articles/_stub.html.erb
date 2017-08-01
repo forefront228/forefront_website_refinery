@@ -1,22 +1,30 @@
-<li class="col-md-12 clearfix scrollReveal sr-bottom news-item">
+<li class="col-md-12 col-xs-12 scrollReveal sr-bottom news-item">
   <div class="thumb">
     <img src="<%= article.image_url %>" alt="">
   </div>
   <div class="content">
     <div class="news-main-img img-fluid">
       <% if article.video_embed %>
-      <div class="aspect-ratio">
-        <%= article.video_embed.html_safe %>
-      </div>
+        <div class="aspect-ratio">
+          <%= article.video_embed.html_safe %>
+        </div>
       <% else %>
-      <img src="<%= article.image_url %>" class="rounded" alt="">
+        <img src="<%= article.image_url %>" class="rounded" alt="">
       <% end %>
     </div>
+
     <div class="spacer space-40"></div>
+
     <p class="news-text">
       <%= article.content.gsub(article.shortened_url, "<a href="+article.shortened_url+">"+article.shortened_url+"</a>").html_safe %>
     </p>
-    <div class="text-right see-more-container"><span class="see-more">see more</span></div>
-    <div class="text-right see-less-container"><a href="#" class="see-less">see less</a></div>
+
+    <div class="text-right see-more-container">
+      <span class="see-more btn btn-sm btn-skin-border btn-block">see more</span>
+    </div>
+
+    <div class="text-right see-less-container">
+      <a href="#" class="see-less btn btn-sm btn-skin-border btn-block">see less</a>
+    </div>
   </div>
 </li>
