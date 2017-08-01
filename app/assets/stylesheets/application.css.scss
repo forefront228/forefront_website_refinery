@@ -50,10 +50,29 @@
   font-style: italic;
 }
 
-.img-hero {
-  object-fit:cover;
-  width:100vw;
-  height:51vw;
+@media screen and (max-device-width: 767px) {
+  #page {
+    padding-top: $mobile-padding-top;
+  }
+  .pad-from-navbar {
+    padding-top: $no-hero-image-padding;
+  }
+  .img-hero {
+    object-fit:cover;
+    width:100vw;
+    height:100vw; // DETERMINES HERO IMAGE ASPECT RATIO ON MOBILE
+  }
+}
+
+@media screen and (min-device-width: 768px) {
+  .pad-from-navbar {
+    padding-top:$content-padding-top;
+  }
+  .img-hero {
+    object-fit:cover;
+    width:100vw;
+    height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+  }
 }
 
 .panel-body {
@@ -66,13 +85,6 @@ body {
   background-color: #F5F8FA;
 }
 
-@media screen and (min-device-width: 768px) {
-  /* some CSS here */
-  .pad-from-navbar {
-    padding-top:$content-padding-top;
-  }
-
-}
 
 
 .text-overlay {
@@ -86,17 +98,4 @@ body {
 
 .site-text-align {
   text-align: justify;
-}
-
-@media screen and (max-device-width: 767px) {
-  /* some CSS here */
-  #page {
-    padding-top: $mobile-padding-top;
-  }
-}
-@media screen and (max-device-width: 767px) {
-  /* some CSS here */
-  .pad-from-navbar {
-    padding-top: $no-hero-image-padding;
-  }
 }
