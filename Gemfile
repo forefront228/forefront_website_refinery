@@ -61,6 +61,8 @@ gem 'faker'
 gem 'betterlorem'
 # Manage Linkedin OAuth2
 gem "linkedin-oauth2", "~> 1.0"
+# Cross Browser compatiblity gem
+gem "autoprefixer-rails"
 
 # Refinery CMS -----------------------------------------------------------------
 gem 'refinerycms', '~> 3.0'
