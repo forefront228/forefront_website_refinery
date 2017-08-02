@@ -80,7 +80,47 @@
 .img-hero {
   object-fit:cover;
   width:100vw;
-  height:51vw;
+  height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+}
+@media screen and (max-device-width: 767px) {
+  .pad-from-navbar {
+    padding-top: $no-hero-image-padding;
+  }
+  //////////// comment to make only featured projects bigger on mobile////////
+  .img-hero {
+    object-fit:cover;
+    width:100vw;
+    height:134vw; // DETERMINES HERO IMAGE ASPECT RATIO ON MOBILE
+  }
+  //////////// un-comment to make only featured projects bigger on mobile////////
+  // .featured-project-img-hero {
+  //   object-fit:cover;
+  //   width:100vw;
+  //   height:120vw; // DETERMINES HERO IMAGE ASPECT RATIO ON MOBILE
+  // }
+}
+
+@media screen and (min-device-width: 768px) {
+  .pad-from-navbar {
+    padding-top:$content-padding-top;
+  }
+  //////////// comment to make only featured projects bigger on mobile////////
+  .img-hero {
+    object-fit:cover;
+    width:100vw;
+    height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+  }
+  //////////// un-comment to make only featured projects bigger on mobile////////
+  // .featured-project-img-hero {
+  //   object-fit:cover;
+  //   width:100vw;
+  //   height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+  // }
+}
+
+.hero-image-content-spacer {
+  width: 100%;
+  height: $hero-image-content-spacer;
 }
 
 .panel-body {
@@ -92,15 +132,6 @@
 body {
   background-color: #F5F8FA;
 }
-
-@media screen and (min-device-width: 768px) {
-  /* some CSS here */
-  .pad-from-navbar {
-    padding-top:$content-padding-top;
-  }
-
-}
-
 
 .text-overlay {
   width:100vw;
@@ -115,15 +146,6 @@ body {
   text-align: justify;
 }
 
-@media screen and (max-device-width: 767px) {
-  /* some CSS here */
-  #page {
-    padding-top: $mobile-padding-top;
-  }
-}
-@media screen and (max-device-width: 767px) {
-  /* some CSS here */
-  .pad-from-navbar {
-    padding-top: $no-hero-image-padding;
-  }
+#body_content.no_side_body {
+  padding: $content-padding-top 15px 0px 15px;
 }
