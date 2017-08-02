@@ -28,7 +28,8 @@ pages = [
     address_line_2: "228 S Wabash Ave #300",
     city_state_zip: "Chicago, IL 60604",
     email_address: "info@forefrontstructural.com",
-    map_embed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.659735433162!2d-87.6285748849054!3d41.87866677335837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca3085e35a3%3A0xff354344f728f4fc!2sForefront+Structural+Engineer+Inc!5e0!3m2!1sen!2sus!4v1493580701752" frameborder="0" style="width: 100%; height: 400px;"></iframe>'
+    map_embed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.659735433162!2d-87.6285748849054!3d41.87866677335837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca3085e35a3%3A0xff354344f728f4fc!2sForefront+Structural+Engineer+Inc!5e0!3m2!1sen!2sus!4v1493580701752" frameborder="0" style="width: 100%; height: 400px;"></iframe>',
+    position: 1
   },
 
   {
@@ -41,13 +42,15 @@ pages = [
       But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
     </p>",
     body_header: "Where ideas are born",
-    hero_banner_text: "Our Team"
+    hero_banner_text: "Our Team",
+    position: 3
   },
 
   {
     name: "News",
     hero_image: Refinery::Image.create(image: File.new('app/assets/images/news-hero.jpg')),
-    hero_banner_text: "News"
+    hero_banner_text: "News",
+    position: 2
   }
 ]
 
