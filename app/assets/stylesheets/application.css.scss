@@ -56,9 +56,6 @@
   height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
 }
 @media screen and (max-device-width: 767px) {
-  #page {
-    padding-top: $mobile-padding-top;
-  }
   .pad-from-navbar {
     padding-top: $no-hero-image-padding;
   }
