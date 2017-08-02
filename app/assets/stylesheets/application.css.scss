@@ -28,27 +28,54 @@
 
 @font-face {
   font-family: 'Tex Gyre Adventor';
-  src: font-url('texgyreadventor-regular.otf') format("opentype");
+  src: font-url('texgyreadventor-regular.woff') format("woff"), font-url('texgyreadventor-regular.woff') format("truetype");
 }
 
 @font-face {
   font-family: 'Tex Gyre Adventor';
-  src: font-url('texgyreadventor-italic.otf') format("opentype");
+  src: font-url('texgyreadventor-italic.woff') format("woff"), font-url('texgyreadventor-italic.woff') format("truetype");
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Tex Gyre Adventor';
-  src: font-url('texgyreadventor-bold.otf') format("opentype");
+  src: font-url('texgyreadventor-bold.woff') format("woff"), font-url('texgyreadventor-bold.woff') format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Tex Gyre Adventor';
-  src: font-url('texgyreadventor-bolditalic.otf') format("opentype");
+  src: font-url('texgyreadventor-bolditalic.woff') format("woff"), font-url('texgyreadventor-bolditalic.woff') format("truetype");
   font-weight: bold;
   font-style: italic;
 }
+
+// //////////////////////////////////
+
+
+// @font-face {
+//   font-family: 'Tex Gyre Adventor';
+//   src: font-url('texgyreadventor-regular.otf') format("opentype");
+// }
+//
+// @font-face {
+//   font-family: 'Tex Gyre Adventor';
+//   src: font-url('texgyreadventor-italic.otf') format("opentype");
+//   font-style: italic;
+// }
+//
+// @font-face {
+//   font-family: 'Tex Gyre Adventor';
+//   src: font-url('texgyreadventor-bold.otf') format("opentype");
+//   font-weight: bold;
+// }
+//
+// @font-face {
+//   font-family: 'Tex Gyre Adventor';
+//   src: font-url('texgyreadventor-bolditalic.otf') format("opentype");
+//   font-weight: bold;
+//   font-style: italic;
+// }
 
 .img-hero {
   object-fit:cover;
