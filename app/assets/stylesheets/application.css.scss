@@ -91,8 +91,6 @@
   // }
 }
 
-
-
 .hero-image-content-spacer {
   width: 100%;
   height: $hero-image-content-spacer;
@@ -108,8 +106,6 @@ body {
   background-color: #F5F8FA;
 }
 
-
-
 .text-overlay {
   width:100vw;
   background: rgba(0,0,0,0.3);
@@ -121,4 +117,8 @@ body {
 
 .site-text-align {
   text-align: justify;
+}
+
+#body_content.no_side_body {
+  padding-top: $content-padding-top;
 }
