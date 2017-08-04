@@ -19,12 +19,6 @@
     "SECRET_KEY_BASE": {
       "required": true
     },
-    "AWS_ACCESS_KEY_ID": {
-      "required": true
-    },
-    "AWS_SECRET_ACCESS_KEY": {
-      "required": true
-    },
     "LINKEDIN_KEY": {
       "required": true
     },
@@ -35,9 +29,6 @@
       "required": true
     },
     "S3_BUCKET": {
-      "required": true
-    },
-    "S3_BUCKET_NAME": {
       "required": true
     },
     "S3_KEY": {
