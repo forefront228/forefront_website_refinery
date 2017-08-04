@@ -31,9 +31,6 @@
     "S3_BUCKET": {
       "required": true
     },
-    "S3_BUCKET_NAME": {
-      "required": true
-    },
     "S3_KEY": {
       "required": true
     },
