@@ -22,21 +22,6 @@
   color: white;
 }
 
-@media (max-device-width: 767px) {
-  /* some CSS here */
-  #navbar-container {
-    padding-top:48px; //sets navbar height
-    text-align: left;
-  }
-}
-
-@media (min-device-width: 768px) {
-  /* some CSS here */
-  #navbar-container {
-    height:48px; //sets navbar height
-    text-align: left;
-  }
-}
 
 #menu-hamburger {
   // padding: 0px;
@@ -58,6 +43,53 @@
   // vertical-align: -16px; // A. Font and logo same height. Biggest. Too big on mobile.
   vertical-align: -11px; // B. Font and logo same height. Smaller. Good size for destop and mobile
   line-height: normal;
+}
+
+@media (max-device-width: 400px) {
+  .navbar-text {
+    font-size: 34px;
+  }
+  .nav-logo {
+    // height: 40px; // A. Font and logo same height. Biggest possible. Too big on mobile.
+    height: 26px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+  }
+
+  .nav-logo img{
+    height: 100%
+  }
+  #logo-icon {
+    display: inline-block !important;
+    vertical-align: middle;
+    line-height: normal;
+    white-space: nowrap;
+    position:absolute;
+    // top:-23px; // A. Font and logo same height. Biggest possible. Too big on mobile.
+    top: -6px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+  }
+
+  #logo-text {
+    display: inline;
+    // vertical-align: -16px; // A. Font and logo same height. Biggest. Too big on mobile.
+    vertical-align: -9px; // B. Font and logo same height. Smaller. Good size for destop and mobile
+    line-height: normal;
+    padding: 0px;
+  }
+}
+
+@media (max-device-width: 767px) {
+  /* some CSS here */
+  #navbar-container {
+    padding-top:48px; //sets navbar height
+    text-align: left;
+  }
+}
+
+@media (min-device-width: 768px) {
+  /* some CSS here */
+  #navbar-container {
+    height:48px; //sets navbar height
+    text-align: left;
+  }
 }
 
 .my-vertical-align {
