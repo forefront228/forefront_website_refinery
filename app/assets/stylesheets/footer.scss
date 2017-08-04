@@ -24,16 +24,19 @@ li.footer-item {
 }
 
 @media screen and (max-device-width: 767px) {
-  /* some CSS here */
   li.footer-item {
     line-height: $footer-height/2;
     margin-top:0px !important;
     margin-bottom:0px !important;
     vertical-align: bottom;
   }
-
   #copyright{
     text-align: center;
   }
+}
 
+@media screen and (max-device-width: 400px) {
+  #footer-xs-no-padding {
+    padding: 0px;
+  }
 }
