@@ -10,7 +10,7 @@ module Refinery
         # by swapping @page for @project in the line below:
         @dropdown_tags = Refinery::Tags::Tag.where({ name: %w(Residential Commercial Hospitality Institutional Community Mixed-Use)})
         @adaptive_tag = Refinery::Tags::Tag.find_by_name("Adaptive")
-        @projects = Refinery::Projects::Project.eager_load(:tags,:featured_image)
+        @projects = Refinery::Projects::Project.all.order("position ASC")
 
         present(@page)
       end
