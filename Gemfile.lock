@@ -312,6 +312,8 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rollbar (2.15.0)
+      multi_json
     routing-filter (0.6.1)
       actionpack (>= 4.2, < 5.2)
       activesupport (>= 4.2, < 5.2)
@@ -410,6 +412,7 @@ DEPENDENCIES
   refinerycms-tags!
   refinerycms-team_members!
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
+  rollbar
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   skylight
@@ -425,4 +428,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.1
+   1.15.2
