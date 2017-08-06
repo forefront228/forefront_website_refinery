@@ -8,10 +8,11 @@ module Refinery
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @project in the line below:
-        @dropdown_tags = Refinery::Tags::Tag.where({ name: %w(Residential Commercial Hospitality Institutional Community Mixed-Use)})
-        @adaptive_tag = Refinery::Tags::Tag.find_by_name("Adaptive")
-        @projects = Refinery::Projects::Project.eager_load(:tags,:featured_image)
-
+        tags = Refinery::Tags::Tag.all.to_a
+        @dropdown_tags = tags.select {|tag| tag.name.in?(%w(Residential Commercial Hospitality Institutional Community Mixed-Use))}
+        @adaptive_tag = tags.select {|tag| tag.name == "Adaptive"}
+        @projects = Refinery::Projects::Project.eager_load(:tags,:featured_image).order(:position)
+        # @projects = Refinery::Projects::Project.all.order("position ASC")
         present(@page)
       end
 
