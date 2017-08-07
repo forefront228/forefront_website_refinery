@@ -6,6 +6,13 @@ module Refinery
         crudify :'refinery/articles/article',
         :title_attribute => 'content'
 
+        def index
+          search_all_articles if searching?
+          # paginate_all_articles
+          @articles = Article.all.order(:position)
+          render_partial_response?
+        end
+
         def callback
           code = params["code"]
           oauth = LinkedIn::OAuth2.new
