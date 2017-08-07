@@ -64,6 +64,8 @@ gem "linkedin-oauth2", "~> 1.0"
 # Cross Browser compatiblity gem
 gem "autoprefixer-rails"
 
+gem "rollbar"
+
 # Refinery CMS -----------------------------------------------------------------
 gem 'refinerycms', '~> 3.0'
 # Optionally, specify additional Refinery CMS Extensions here:
