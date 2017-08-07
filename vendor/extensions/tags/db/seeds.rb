@@ -20,11 +20,12 @@ end
 
 Refinery::Tags::Tag.destroy_all
 
-require 'faker'
 tags = ["Residential", "Commercial", "Hospitality", "Institutional", "Community", "Mixed-Use", "Adaptive", "New Construction"]
 
 tags.each do |tag|
   Refinery::Tags::Tag.create(name:tag)
 end
 
-Refinery::Projects::Project.all.each { |project| project.tags=(Refinery::Tags::Tag.all.sample(rand(2..Refinery::Tags::Tag.count))) }
+if Rails.env.downcase != "production"
+  Refinery::Projects::Project.all.each { |project| project.tags=(Refinery::Tags::Tag.all.sample(rand(2..Refinery::Tags::Tag.count))) }
+end
