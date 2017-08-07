@@ -23,7 +23,7 @@ module Refinery
           p "API ACCESSED"
           p "**********************"
 
-          linkedin_articles = api.company_updates(id: 3277007)["all"]
+          linkedin_articles = api.company_updates(id: 3277007)["all"].sort_by { |a| a[:linkedin_timestamp]}
 
           # binding.pry
 
