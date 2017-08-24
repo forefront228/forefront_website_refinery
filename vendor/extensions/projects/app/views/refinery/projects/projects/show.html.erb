@@ -43,10 +43,10 @@
           </thead>
           <tbody>
             <tr>
-              <td><%= @project.team_name %></td>
-              <td><%= @project.location %></td>
-              <td><%= number_with_delimiter(@project.area)%>  sq ft</td>
-              <td><%= @project.completion_date.year %></td>
+              <td><%= @project.team_name if @project.team_name %></td>
+              <td><%= @project.location if @project.location %></td>
+              <td><%= number_with_delimiter(@project.area) + " sq ft" if @project.area%></td>
+              <td><%= @project.completion_date.year if @project.completion_date %></td>
             </tr>
           </tbody>
         </table>
