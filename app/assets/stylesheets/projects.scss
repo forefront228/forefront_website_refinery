@@ -54,14 +54,18 @@
 .project-stub-wrapper{
     position:relative;
     overflow:hidden;
-    padding-bottom:66%;  //This sets aspect ratio of images
+    padding-bottom: 100%;  //This sets aspect ratio of images
 
 }
-.project-stub-wrapper img {
+// .project-stub-wrapper img {
+.img-wrapper {
     position:absolute;
-    object-fit: cover;
+    // object-fit: cover;
     height:100%;
     width:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .modal-slide {
