@@ -17,7 +17,7 @@ module Refinery
 
         def create
           @project = Refinery::Projects::Project.new(project_params)
-          @project.assign_attributes(position:Project.last.position + 1)
+          @project.assign_attributes(position: Project.any? ? Project.last.position + 1 : 1)
           if @project.valid?
             if params["tags"]
               tags = params["tags"]["ids"]

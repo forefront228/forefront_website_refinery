@@ -1,3 +1,5 @@
+@import 'variables';
+
 .project-heading {
   padding: 2em 35px 2em 35px;
 }
@@ -35,33 +37,12 @@
  }
 
 // Below is all image gallery styling
-
-.gallery-thumbnail-wrapper{
-    position:relative;
-    overflow:hidden;
-    padding-bottom:100%; //This sets aspect ratio of images
-
-}
-.gallery-thumbnail-wrapper img {
-    position:absolute;
-    object-fit: cover;
-    height:100%;
-    width:100%;
+.project-stub-image {
+  padding-bottom: $project-stub-aspect-ratio;
 }
 
-
-// defines aspect ratio of project-index images
-.project-stub-wrapper{
-    position:relative;
-    overflow:hidden;
-    padding-bottom:66%;  //This sets aspect ratio of images
-
-}
-.project-stub-wrapper img {
-    position:absolute;
-    object-fit: cover;
-    height:100%;
-    width:100%;
+.project-show-gallery-image {
+  padding-bottom: $project-show-gallery-aspect-ratio;
 }
 
 .modal-slide {

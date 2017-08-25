@@ -39,6 +39,9 @@
     },
     "S3_SECRET": {
       "required": true
+    },
+    "ROLLBAR_ACCESS_TOKEN": {
+      "required": true
     }
   },
   "formation": {

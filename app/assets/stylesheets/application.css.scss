@@ -50,72 +50,35 @@
   font-style: italic;
 }
 
-// //////////////////////////////////
-
-
-// @font-face {
-//   font-family: 'Tex Gyre Adventor';
-//   src: font-url('texgyreadventor-regular.otf') format("opentype");
-// }
-//
-// @font-face {
-//   font-family: 'Tex Gyre Adventor';
-//   src: font-url('texgyreadventor-italic.otf') format("opentype");
-//   font-style: italic;
-// }
-//
-// @font-face {
-//   font-family: 'Tex Gyre Adventor';
-//   src: font-url('texgyreadventor-bold.otf') format("opentype");
-//   font-weight: bold;
-// }
-//
-// @font-face {
-//   font-family: 'Tex Gyre Adventor';
-//   src: font-url('texgyreadventor-bolditalic.otf') format("opentype");
-//   font-weight: bold;
-//   font-style: italic;
-// }
-
-.img-hero {
-  object-fit:cover;
-  width:100vw;
-  height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+.single-image-wrapper {
+    position:relative;
+    overflow:hidden;
+    // Aspect ratio is set with variables and declared in scss files
+}
+.single-image {
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 @media screen and (max-device-width: 767px) {
   .pad-from-navbar {
     padding-top: $no-hero-image-padding;
   }
-  //////////// comment to make only featured projects bigger on mobile////////
   .img-hero {
-    object-fit:cover;
-    width:100vw;
-    height:134vw; // DETERMINES HERO IMAGE ASPECT RATIO ON MOBILE
+    padding-bottom: $hero-image-mobile-aspect-ratio; // sets hero image aspect ratio on mobile
   }
-  //////////// un-comment to make only featured projects bigger on mobile////////
-  // .featured-project-img-hero {
-  //   object-fit:cover;
-  //   width:100vw;
-  //   height:120vw; // DETERMINES HERO IMAGE ASPECT RATIO ON MOBILE
-  // }
 }
 
 @media screen and (min-device-width: 768px) {
   .pad-from-navbar {
     padding-top:$content-padding-top;
   }
-  //////////// comment to make only featured projects bigger on mobile////////
   .img-hero {
-    object-fit:cover;
-    width:100vw;
-    height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
+    padding-bottom: $hero-image-desktop-aspect-ratio; // sets hero image aspect ratio on desktop
   }
-  //////////// un-comment to make only featured projects bigger on mobile////////
-  // .featured-project-img-hero {
-  //   object-fit:cover;
-  //   width:100vw;
-  //   height:51vw; // DETERMINES HERO IMAGE ASPECT RATIO ON DESKTOP
-  // }
 }
 
 .hero-image-content-spacer {

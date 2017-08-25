@@ -2,7 +2,9 @@
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <%= image_tag(@project.featured_image.url,class:"img-hero") %>
+        <div class="single-image-wrapper img-hero">
+          <div class="single-image" style="background-image:url(<%= asset_path @project.featured_image.url %>)"></div>
+        </div>
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
@@ -43,10 +45,10 @@
           </thead>
           <tbody>
             <tr>
-              <td><%= @project.team_name %></td>
-              <td><%= @project.location %></td>
-              <td><%= number_with_delimiter(@project.area)%>  sq ft</td>
-              <td><%= @project.completion_date.year %></td>
+              <td><%= @project.team_name if @project.team_name %></td>
+              <td><%= @project.location if @project.location %></td>
+              <td><%= number_with_delimiter(@project.area) + " sq ft" if @project.area%></td>
+              <td><%= @project.completion_date.year if @project.completion_date %></td>
             </tr>
           </tbody>
         </table>
@@ -67,8 +69,8 @@
     <div class="row">
       <% @project.images.each_with_index do |image,i| %>
       <div class="col-md-3 col-6 padding-override"> <!-- I don't understand why col-xs-6 doesn't work to define column size on mobile -->
-        <div class="gallery-thumbnail-wrapper">
-          <%= image_tag(image.url, onclick:"openModal();currentSlide(#{i+1})", class:"hover-shadow") %>
+        <div class="single-image-wrapper project-show-gallery-image">
+          <div class="single-image hover-shadow" style="background-image:url(<%= image.url %>)" onclick= "openModal();currentSlide(<%= i+1 %>)"></div>
         </div>
       </div>
       <% end %>

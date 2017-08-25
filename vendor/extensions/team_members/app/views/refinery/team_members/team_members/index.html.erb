@@ -2,7 +2,9 @@
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <%= image_tag(@team.hero_image.url, class:"img-hero") %>
+        <div class="single-image-wrapper img-hero">
+          <div class="single-image" style="background-image:url(<%= asset_path @team.hero_image.url %>)"></div>
+        </div>
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
@@ -43,9 +45,9 @@
     <% @team_members.each do |person| %>
 
     <div class="col-md-4 margin-b-30">
-      <div class="person-col team_member-thumbnail-wrapper">
-        <a href="/team/<%= person.id %>">
-        <%= image_tag(person.primary_image.url) %>
+      <a href="/team/<%= person.id %>">
+        <div class="person-col single-image-wrapper team_member-index-stub-image">
+          <div class="single-image" style="background-image:url(<%= asset_path person.primary_image.url %>)"></div>
         <div class="person-overlay">
           <div class="person-inner">
             <h4 class="text-uppercase"><%= person.first_name + " " + person.last_name %></h4>
