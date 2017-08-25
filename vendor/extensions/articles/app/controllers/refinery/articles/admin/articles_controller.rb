@@ -25,9 +25,6 @@ module Refinery
 
           linkedin_articles = api.company_updates(id: 3277007)["all"].sort_by { |a| a[:linkedin_timestamp]}
 
-          # binding.pry
-
-          # Article.destroy_all
           if Article.all.count != 0
             article_timestamps = Article.all.pluck(:linkedin_timestamp)
           else

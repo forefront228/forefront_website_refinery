@@ -5,7 +5,6 @@
     <div class="space-40"></div>
     <div>
       <!-- Nav tabs -->
-      <%# binding.pry %>
       <ul class="list-inline text-center about-tabs justify-content-center nav margin-b-40" role="tablist">
         <% @organizations.each_with_index do |organization, index| %>
           <% tab_name = organization.tab_name.gsub(/[^0-9a-z]/i, '') %>
