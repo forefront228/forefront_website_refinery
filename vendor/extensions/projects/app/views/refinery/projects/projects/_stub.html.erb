@@ -1,8 +1,8 @@
+<% binding.pry %>
 <div class="col-md-6 align-top mb-3 project-stub<%= ' adaptive' if @adaptive_tag.in?(project.tags)  %>">
   <a href="/projects/<%= project.id %>">
-    <div class="project-stub-wrapper">
-      <div class="img-wrapper" style="background-image:url(<%= asset_path project.featured_image.url %>)"></div>
-      <!-- <img src="<%#= asset_path project.featured_image.url %>" alt=""> -->
+    <div class="single-image-wrapper project-stub-image">
+      <div class="single-image" style="background-image:url(<%= asset_path project.featured_image.url %>)"></div>
     </div>
   </a>
   <h2 class='project-index-name'><%= project.name %></h2>

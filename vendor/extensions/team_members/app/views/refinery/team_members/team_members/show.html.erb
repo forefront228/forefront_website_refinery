@@ -2,7 +2,9 @@
   <div class="main-slider">
     <ul class="slides">
       <li>
-        <%= image_tag(@team_member.secondary_image.url,class:"img-fluid img-hero") %>
+        <div class="single-image-wrapper img-hero">
+          <div class="single-image" style="background-image:url(<%= asset_path @team_member.secondary_image.url %>)"></div>
+        </div>
         <div class="slider-overlay">
           <div class="slider-table">
             <div class="slider-vm">
