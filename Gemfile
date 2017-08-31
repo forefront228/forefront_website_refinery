@@ -66,6 +66,8 @@ gem "autoprefixer-rails"
 
 gem "rollbar"
 
+gem "puma_worker_killer"
+
 # Refinery CMS -----------------------------------------------------------------
 gem 'refinerycms', '~> 3.0'
 # Optionally, specify additional Refinery CMS Extensions here:

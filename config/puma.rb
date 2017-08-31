@@ -7,6 +7,12 @@ port ENV['PORT'] || 3000
 environment ENV['RACK_ENV'] || 'development'
 preload_app!
 
+before_fork do
+  require "puma_worker_killer"
+
+  PumaWorkerKiller.enable_rolling_restart(3 * 3600)
+end
+
 on_worker_boot do
   # worker specific setup
   ActiveSupport.on_load(:active_record) do
