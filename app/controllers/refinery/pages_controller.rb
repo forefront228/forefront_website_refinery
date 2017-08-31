@@ -10,7 +10,7 @@ module Refinery
 
     # This action is usually accessed with the root path, normally '/'
     def home
-      @projects = ::Refinery::Projects::Project.includes(:featured_image).where(featured:true)
+      @projects = ::Refinery::Projects::Project.includes(:featured_image).where(featured:true).order(position: :asc)
       @articles = ::Refinery::Articles::Article.order(position: :asc).limit(3)
       @organizations = Refinery::OrganizationTabs::OrganizationTab.all
       @contact = Refinery::CustomPages::CustomPage.find_by_name("Contact")

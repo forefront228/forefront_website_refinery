@@ -3,6 +3,10 @@
     <%= project.name %>
   </span>
 
+  <% if project.featured %>
+    <i class="fa fa-star" aria-hidden="true"></i>
+  <% end %>
+
   <span class='preview'></span>
 
   <span class='actions'>
