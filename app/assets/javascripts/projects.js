@@ -55,7 +55,7 @@ function showSlides(n) {
 };
 
 // For filtering Adaptive on Project Index Page
-$( document ).ready(function() {
+$(document).on('turbolinks:load', function() {
   var animationSpeed = 100;
   var stubs = $('.project-stub');
   var nonAdaptiveStubs = $(".project-stub:not('.adaptive')");
