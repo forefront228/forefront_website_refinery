@@ -70,7 +70,7 @@
       <% @project.images.each_with_index do |image,i| %>
       <div class="col-md-3 col-6 padding-override"> <!-- I don't understand why col-xs-6 doesn't work to define column size on mobile -->
         <div class="single-image-wrapper project-show-gallery-image">
-          <div class="single-image hover-shadow" style="background-image:url(<%= image.url %>)" onclick= "openModal();currentSlide(<%= i+1 %>)"></div>
+          <div class="single-image demo" style="background-image:url(<%= image.url %>)" onclick= "openModal();currentSlide(<%= i+1 %>)"></div>
         </div>
       </div>
       <% end %>
@@ -90,10 +90,9 @@
           <div class="row modal-thumbnails-wrapper">
             <% @project.images.each_with_index do |image,i| %>
             <div class="col-md-1 padding-override">
-              <div class="gallery-thumbnail-wrapper">
-                <%= image_tag(image.url,class:"demo",onclick:"currentSlide(#{i+1})") %>
+              <div class="single-image-wrapper project-show-lightbox-thumbnail">
+                <div class="single-image demo lightbox-thumbnail" style="background-image:url(<%= image.url %>)" onclick= "currentSlide(<%= i+1 %>)"></div>
               </div>
-              <!-- <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature"> -->
             </div>
             <% end %>
           </div>
