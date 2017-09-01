@@ -45,6 +45,9 @@
     },
     "PUMA_WORKERS": {
       "required": true
+    },
+    "PUMA_RESTART_FREQUENCY_HOURS": {
+      "required": true
     }
   },
   "formation": {
