@@ -10,7 +10,7 @@ preload_app!
 before_fork do
   require "puma_worker_killer"
 
-  PumaWorkerKiller.enable_rolling_restart(ENV['PUMA_RESTART_FREQUENCY_HOURS'].to_f * 3600)
+  PumaWorkerKiller.enable_rolling_restart(3600 * (ENV['PUMA_RESTART_FREQUENCY_HOURS'] || 6).to_f)
 end
 
 on_worker_boot do
