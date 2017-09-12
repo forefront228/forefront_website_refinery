@@ -1,4 +1,4 @@
-user_data = [
+  user_data = [
   {username:"Forefront", email:"f@f.com", password: "password"},
   {username:"Logan", email:"logandsprice@gmail.com", password: "password"},
   {username:"Pavan", email:"pavan.sarguru@gmail.com", password: "password"},

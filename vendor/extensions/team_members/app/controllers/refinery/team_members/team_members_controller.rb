@@ -9,7 +9,6 @@ module Refinery
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @team_member in the line below:
         @team = Refinery::CustomPages::CustomPage.find_by_name("Team")
-        @team_members = TeamMember.includes(:primary_image)
         # present(@page)
       end
 
@@ -25,7 +24,7 @@ module Refinery
     protected
 
       def find_all_team_members
-        @team_members = TeamMember.order('position ASC')
+        @team_members = TeamMember.includes(:primary_image).order('position ASC')
       end
 
       def find_page
