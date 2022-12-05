@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "~> 2.3.4"
+ruby "2.7.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
@@ -77,7 +77,9 @@ gem 'refinerycms-authentication-devise', '~> 1.0'
 #  gem 'refinerycms-blog', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-inquiries', ['~> 3.0', '>= 3.0.0']
 #  gem 'refinerycms-search', ['~> 3.0', '>= 3.0.0']
-gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
+# gem 'refinerycms-page-images', '~> 3.0.0', git: "https://github.com/refinery/refinerycms-page-images", branch: "master"
+gem 'refinerycms-page-images', '~> 3.0.0', git: "https://github.com/refinery/refinerycms-page-images", branch: "3-0-stable"
+# gem 'refinerycms-page-images', '~>3.0.0', github: "refinery/refinerycms-page-images", branch: "master"
 
 gem 'refinerycms-projects', path: 'vendor/extensions'
 gem 'refinerycms-team_members', path: 'vendor/extensions'
